@@ -53,20 +53,20 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
   // useEffect
 
-  const gui = new GUI()
+  // const gui = new GUI()
   useEffect(() => {
 
-    const folder = gui.addFolder("Displacement")
-    folder.add(materialRef.current.uniforms.uDistortionFrequency, 'value', 0, 0.05, 0.001)
-    folder.add(materialRef.current.uniforms.uDistortionStrength, 'value', 0, 200, 1)
-    folder.add(materialRef.current.uniforms.uDisplacementFrequency, 'value', 0, 0.05, 0.001)
-    folder.add(materialRef.current.uniforms.uDisplacementStrength, 'value', 0, 200, 1)
-    folder.open()
-    const fresnelFolder = gui.addFolder("FresnelFolder")
-    fresnelFolder.add(materialRef.current.uniforms.uFresnelOffset, 'value', -3, 3, 0.1)
-    fresnelFolder.add(materialRef.current.uniforms.uFresnelMultiplier, 'value', 0, 4, 0.1)
-    fresnelFolder.add(materialRef.current.uniforms.uFresnelPower, 'value', 0, 3, 0.1)
-    fresnelFolder.open()
+    // const folder = gui.addFolder("Displacement")
+    // folder.add(materialRef.current.uniforms.uDistortionFrequency, 'value', 0, 0.05, 0.001)
+    // folder.add(materialRef.current.uniforms.uDistortionStrength, 'value', 0, 200, 1)
+    // folder.add(materialRef.current.uniforms.uDisplacementFrequency, 'value', 0, 0.05, 0.001)
+    // folder.add(materialRef.current.uniforms.uDisplacementStrength, 'value', 0, 200, 1)
+    // folder.open()
+    // const fresnelFolder = gui.addFolder("FresnelFolder")
+    // fresnelFolder.add(materialRef.current.uniforms.uFresnelOffset, 'value', -3, 3, 0.1)
+    // fresnelFolder.add(materialRef.current.uniforms.uFresnelMultiplier, 'value', 0, 4, 0.1)
+    // fresnelFolder.add(materialRef.current.uniforms.uFresnelPower, 'value', 0, 3, 0.1)
+    // fresnelFolder.open()
 
     startProgress.current = 0
     // gsap.to(sphereRef.current.position, {
