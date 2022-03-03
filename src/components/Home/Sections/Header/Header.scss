@@ -1,0 +1,79 @@
+.header {
+  height: 100vh;
+  padding-top: 6rem;
+  margin-bottom: 6rem;
+  position: relative;
+  .sphere {
+    position: absolute;
+    // background-color: red;
+    right: 25%;
+    bottom: 35%;
+    height: 100px;
+    width: 220px;
+  }
+  .red {
+    color: $brightRed;
+  }
+  .title {
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 800;
+  }
+  .subtitle {
+    line-height: 52px;
+    font-size: 48px;
+  }
+  .container {
+    position: relative;
+    height: 100%;
+  }
+  .text {
+    font-size: 16px;
+    width: 330px;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+  }
+  @include breakpoint-down(lg) {
+    .title {
+      font-size: 3.25rem;
+    }
+    .subtitle {
+      font-size: 3rem;
+    }
+    .text {
+      font-size: 1.5rem;
+      left: 0;
+      width: 70%;
+      bottom: 10%;
+      line-height: 2ch;
+    }
+    .sphere {
+      right: 50%;
+      transform: translateX(50%) translateY(-50%);
+      top: 60%;
+      width: 40vw;
+    }
+  }
+  @include breakpoint-down(md) {
+    .title {
+      font-size: max(6.6666666667vw, 25px);
+    }
+    .subtitle {
+      font-size: max(5.6666666667vw, 25px);
+      line-height: 1.2;
+    }
+    .text {
+      font-size: max(3.7333333333vw, 16px);
+    }
+    padding-top: 5rem;
+  }
+  @include breakpoint-down(sm) {
+    .sphere {
+      width: 60vw;
+    }
+    .text {
+      width: 90%;
+    }
+  }
+}

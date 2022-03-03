@@ -1,0 +1,41 @@
+.diensten {
+  padding-bottom: 5rem;
+  .title_wrapper {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .title {
+      font-size: 48px;
+      max-width: 70%;
+      margin-top: -0.25ch;
+    }
+  }
+
+  .content_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include breakpoint-down(lg) {
+    background-color: $white;
+    .title_wrapper {
+      color: $background;
+      flex-direction: column;
+      .title {
+        font-size: max(5.6666666667vw, 25px);
+        max-width: 100%;
+      }
+    }
+    .content_wrapper {
+      color: $background;
+      flex-direction: column;
+    }
+  }
+  @include breakpoint-down(md) {
+    .title_wrapper {
+      margin-top: 5rem;
+    }
+  }
+}

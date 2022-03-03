@@ -1,0 +1,51 @@
+.loader {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .caption {
+    display: flex;
+    align-items: center;
+    .loaderLogo {
+      width: 4rem;
+    }
+    .hr {
+      width: 1px;
+      background-color: $white;
+      height: 2rem;
+      margin: 0 1rem;
+    }
+    .name {
+      font-size: 24px;
+      text-transform: uppercase;
+      span {
+        color: $brightRed;
+      }
+    }
+  }
+  svg {
+    .cls-1 {
+      fill: #c90016;
+    }
+    .cls-2 {
+      fill: #ff000e;
+    }
+    .cls-3 {
+      fill: #a7ef3f;
+    }
+  }
+  @include breakpoint-down(sm) {
+    .caption {
+      .loaderLogo {
+        width: 3rem;
+      }
+      .name {
+        font-size: 16px;
+      }
+    }
+  }
+}

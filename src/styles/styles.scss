@@ -1,0 +1,23 @@
+@import "variables";
+@import "locomotive-scroll";
+@import "mixins";
+@import "globals";
+
+@import "../webgl/AnimationCanvas";
+@import "../components/Nav/Nav";
+@import "../components/Home/Sections/Header/Header";
+@import "../components/Scroll/Scroll";
+@import "../components/SectionHeader/SectionHeader";
+@import "../components/Home/Sections/Over/Over";
+@import "../components/Home/Sections/Werk/Werk";
+@import "../components/ImageTile/ImageTile";
+@import "../components/Selection/Selection";
+@import "../components/Home/Sections/Proces/Proces";
+@import "../components/Slider/Slider";
+@import "../components/Home/Sections/Diensten/Diensten";
+@import "../components/Card/Card";
+@import "../components/Home/Sections/Contact/Contact";
+@import "../components/Footer/Footer";
+@import "../components/SectionHeader2/SectionHeader2";
+@import "../components/Card2/Card2";
+@import "../components/Loader/Loader";

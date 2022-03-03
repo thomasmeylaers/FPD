@@ -1,0 +1,36 @@
+.slider {
+  position: relative;
+  z-index: -5;
+  width: 100px;
+  height: 250px;
+  .arrow {
+    position: absolute;
+    top: 0;
+    svg {
+      position: absolute;
+      top: -3.5px;
+    }
+  }
+  .slider_wrapper {
+    top: 0;
+    position: absolute;
+    left: 13px;
+  }
+  .small,
+  .big {
+    margin-bottom: 20px;
+  }
+  .small {
+    width: 5px;
+    height: 0.1px;
+    background-color: $background;
+  }
+  .big {
+    width: 10px;
+    height: 1px;
+    background-color: $background;
+  }
+}
+.horizontal {
+  transform: rotateZ(-90deg);
+}

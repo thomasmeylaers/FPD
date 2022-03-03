@@ -1,0 +1,46 @@
+@keyframes slideDown {
+  from {
+    top: 10px;
+  }
+  to {
+    top: 20px;
+  }
+}
+@keyframes slideUp {
+  from {
+    top: 20px;
+  }
+  to {
+    top: 10px;
+  }
+}
+
+.scroll {
+  cursor: pointer;
+  .reveal {
+    opacity: 0;
+  }
+  position: absolute;
+  bottom: 4rem;
+  span {
+    position: absolute;
+    transform-origin: 0 0;
+    font-weight: 200;
+    transform: rotate(-90deg);
+    font-size: 14px;
+  }
+  .arrow {
+    top: 10px;
+    left: 17px;
+    animation-name: slideUp;
+    animation-duration: 0.5s;
+  }
+  .active {
+    top: 20px;
+    animation-name: slideDown;
+    animation-duration: 0.5s;
+  }
+  @include breakpoint-down(lg) {
+    display: none;
+  }
+}

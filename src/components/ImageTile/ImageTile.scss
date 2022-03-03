@@ -1,0 +1,86 @@
+.image_tile {
+  cursor: pointer;
+  margin: 0 auto;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .imagePicture {
+      background-color: grey;
+      opacity: 0;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0 0 0;
+      font-size: 36px;
+      font-weight: 500;
+      .arrow {
+        margin-left: 0.8rem;
+        margin-top: 3px;
+      }
+    }
+    .text {
+      font-size: 18px;
+      opacity: 0.5;
+      font-weight: 400;
+    }
+  }
+  @include breakpoint-down(lg) {
+    .wrapper {
+      .imagePicture {
+        opacity: 1;
+      }
+      .title {
+        font-size: max(6.6666666667vw, 25px);
+        .arrow {
+          width: 22px;
+        }
+      }
+      .text {
+        font-size: max(3.6666666667vw, 25px);
+      }
+    }
+  }
+}
+
+#wintersImageTile {
+  $wintersWidth: 540px;
+  width: $wintersWidth;
+
+  .imagePicture {
+    height: calc(0.74446337308347529812606473594549 * $wintersWidth);
+  }
+  @include breakpoint-down(lg) {
+    $wintersWidth: 100%;
+    width: $wintersWidth;
+
+    .imagePicture {
+      height: calc(0.74446337308347529812606473594549 * $wintersWidth);
+    }
+  }
+}
+
+#barBarbaraImageTile {
+  $barBarbaraWidth: 480px;
+  width: $barBarbaraWidth;
+
+  .imagePicture {
+    height: calc(0.75007148984844152130397483557335 * $barBarbaraWidth);
+  }
+  @include breakpoint-down(lg) {
+    $barBarbaraWidth: 100%;
+    width: $barBarbaraWidth;
+
+    .imagePicture {
+      height: calc(0.75007148984844152130397483557335 * $barBarbaraWidth);
+    }
+  }
+}
+
+.even {
+  margin-top: 70%;
+  @include breakpoint-down(lg) {
+    margin-top: 5rem;
+  }
+}

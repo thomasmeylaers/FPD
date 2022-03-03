@@ -6,6 +6,8 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-glslify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -36,3 +38,4 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+

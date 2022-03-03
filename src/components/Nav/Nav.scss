@@ -1,0 +1,133 @@
+$delay: 0.015s;
+$duration: 0.6s;
+$easing: cubic-bezier(0.76, 0, 0.24, 1);
+
+.nav {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  font-weight: 300;
+  font-size: 16px;
+
+  &__wrapper {
+    padding: 2rem 0;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+  &__logo {
+    width: 4rem;
+    cursor: pointer;
+  }
+  &__links {
+    position: relative;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 25%;
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      .nav_link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        opacity: 0.5;
+        transform: translateZ(0);
+        transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .nav_link::before {
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 0;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid;
+        margin-right: 7px;
+        margin-top: 3px;
+        opacity: 0;
+        transform: translateZ(0);
+        transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .nav_link:hover {
+        opacity: 1;
+        &::before {
+          opacity: 1;
+        }
+      }
+      .selected {
+        opacity: 1;
+        &::before {
+          opacity: 1;
+        }
+      }
+      svg {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+
+  .nav__links__mobile {
+    display: none;
+  }
+
+  @include breakpoint-down(lg) {
+    .nav__links__wrapper {
+      display: none;
+    }
+    .nav__links__mobile {
+      display: block;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 10px;
+      top: 1vh;
+      position: fixed;
+      display: none;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 50%;
+        transform: translateZ(0);
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .nav_burger {
+        height: 24px;
+        width: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .nav_burger_line {
+          background-color: $background;
+          height: 2px;
+          width: 80%;
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+}
+
+.as {
+  height: 20vh;
+  width: 100vw;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  z-index: 10000000;
+  display: none;
+}
