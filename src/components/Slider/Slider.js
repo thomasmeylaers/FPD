@@ -77,7 +77,6 @@ export default function Slider({ id, state, orientation }) {
         </div>
         <div ref={(el) => partRef.current.push(el)} className="part">
           <div className="big"></div>
-
         </div>
       </div>
     </div>

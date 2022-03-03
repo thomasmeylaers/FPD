@@ -60,9 +60,9 @@
         font-size: max(5.6666666667vw, 25px);
       }
     }
-    .progress_container {
-      display: none;
-    }
+    // .progress_container {
+    //   display: none;
+    // }
     .content_wrapper {
       color: $background;
       // justify-content: space-between;
@@ -93,11 +93,11 @@
   position: absolute;
   left: 40%;
   transform: translateX(-50%) rotateZ(-90deg);
-  bottom: -25%;
+  bottom: -8%;
 }
 #sliderVertical {
   position: absolute;
-  right: -25%;
+  right: -8%;
   top: 40%;
   transform: translateY(-50%);
 }

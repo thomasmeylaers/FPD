@@ -75,7 +75,7 @@ void main()
     fresnel = pow(max(0.0, fresnel), uFresnelPower);
 
     // Color
-    vec3 Aoffset = mix(vec3(1.,0.,0.5),vec3(0.,0.,1.),uAnimationProgress);
+    vec3 Aoffset = mix(vec3(1.5,0.,0.5),vec3(0.,1.,1.),uAnimationProgress);
     vec3 Boffset = mix(vec3(-1.,0.,0.),vec3(0.,0.,0.),uAnimationProgress);
     float lightAIntensity = max(0.0, - dot(computedNormal.xyz, normalize(- uLightAPosition + Aoffset))) * uLightAIntensity;
     float lightBIntensity = max(0.0, - dot(computedNormal.xyz, normalize(- uLightBPosition + Boffset))) * uLightBIntensity;
