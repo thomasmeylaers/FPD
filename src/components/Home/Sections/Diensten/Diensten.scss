@@ -15,9 +15,10 @@
   }
 
   .content_wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+
   @include breakpoint-down(lg) {
     background-color: $white;
     .title_wrapper {

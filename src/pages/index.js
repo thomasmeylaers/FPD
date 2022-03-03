@@ -39,8 +39,14 @@ const IndexPage = () => {
   const contactTop = useRef()
   const pageColor = useRef()
   pageColor.current = "dark"
-  const sliderWidth = useRef()
   const timeRef = useRef()
+
+  const horizontalSliderRect = useRef()
+  const horizontalSliderRecording = useRef(false)
+  const verticalSliderRect = useRef()
+  const verticalSliderRecording = useRef(false)
+
+  const sliderProgress = useRef({ x: 0, y: 0 })
 
   // State
   const [loading, setLoading] = useState(true)
@@ -50,7 +56,7 @@ const IndexPage = () => {
 
 
   //Context
-  let contextObject = { mousePosRef, scrollRef, pepperRef, sphereContainer, materialsRef, progressContainer, progressState, timeRef, loading, setLoading, desktop, scrollObject }
+  let contextObject = { mousePosRef, scrollRef, pepperRef, sphereContainer, materialsRef, progressContainer, progressState, timeRef, loading, setLoading, desktop, scrollObject, horizontalSliderRecording, verticalSliderRecording, sliderProgress, horizontalSliderRect }
 
   let scrollFunction = (obj) => {
     scrollRef.current = obj.scroll.y
@@ -115,7 +121,7 @@ const IndexPage = () => {
       progressTop.current = rect.y - rect.height - window.innerHeight * 0.2
       let rect2 = document.querySelector("#bgChange2").getBoundingClientRect()
       contactTop.current = rect2.y - rect2.height
-      sliderWidth.current = document.querySelector("#sliderHorizontal").getBoundingClientRect().width
+      horizontalSliderRect.current = document.querySelector("#sliderHorizontal").getBoundingClientRect()
 
       // Locomotive scroll init
       scrollObject.current = new LocomotiveScroll({
@@ -180,6 +186,8 @@ const IndexPage = () => {
 
   // Get normalized mouse position
   const handleMouseMove = (e) => {
+    verticalSliderRect.current = document.querySelector("#sliderVertical").getBoundingClientRect()
+
     if (window !== "undefined") {
       gsap.to(mousePosRef.current, {
         x: (e.pageX * 2 - window.innerWidth) / 2,
@@ -187,24 +195,56 @@ const IndexPage = () => {
         duration: 2,
         ease: 'power4.out'
       })
-      gsap.to('#sliderArrowHorizontal', {
-        y: e.pageX / window.innerWidth * sliderWidth.current - 1,
-        duration: 1,
-        ease: 'power1.out'
-      })
-      gsap.to('#sliderArrowVertical', {
-        y: e.pageY / window.innerHeight * sliderWidth.current - 1,
-        duration: 1,
-        ease: 'power4.out'
-      })
+      if (horizontalSliderRecording.current) {
+        if (e.pageX > horizontalSliderRect.current.x && e.pageX < (horizontalSliderRect.current.x + horizontalSliderRect.current.width)) {
+          gsap.to('#sliderArrowHorizontal', {
+            y: (e.pageX - horizontalSliderRect.current.x) - 2,
+            duration: 1,
+            ease: 'power1.out'
+          })
+          gsap.to(sliderProgress.current, {
+            x: (e.pageX - horizontalSliderRect.current.x) / horizontalSliderRect.current.width,
+            duration: 1,
+            ease: 'power1.out'
+          })
+        }
+
+        // gsap.to('#sliderArrowVertical', {
+        //   y: e.pageY / window.innerHeight * sliderWidth.current - 1,
+        //   duration: 1,
+        //   ease: 'power4.out'
+        // })
+      }
+      if (verticalSliderRecording.current) {
+        if (e.pageY > verticalSliderRect.current.y && e.pageY <= verticalSliderRect.current.y + horizontalSliderRect.current.width) {
+          gsap.to('#sliderArrowVertical', {
+            y: e.pageY - verticalSliderRect.current.y - 2,
+            duration: 1,
+            ease: 'power4.out'
+          })
+          gsap.to(sliderProgress.current, {
+            y: (e.pageY - verticalSliderRect.current.y) / horizontalSliderRect.current.width,
+            duration: 1,
+            ease: 'power1.out'
+          })
+        }
+      }
     }
+  }
+  const mouseUp = (e) => {
+
+    horizontalSliderRecording.current = false
+
+    verticalSliderRecording.current = false
+
+
   }
 
   return (
     <>
       <WebGLContext.Provider value={contextObject}>
         <Loader />
-        <main onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
+        <main onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
           <Nav selected="over ons" />
           <Header />
           <Over />
@@ -224,3 +264,10 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+
+
+// FEEDBACK
+// Rechtse slider soms bedekt
+// Sliders anders doen
+// Service centreren

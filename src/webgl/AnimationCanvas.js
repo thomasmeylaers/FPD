@@ -49,7 +49,7 @@ export default function AnimationCanvas() {
 
       {/* <Progress state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> */}
 
-      {contextObject.desktop ? <Progress2 state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> : ""}
+      {contextObject.desktop ? <Progress2 sliderProgress={contextObject.sliderProgress.current} state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> : ""}
 
       {/* {loading ? "" : <Sphere scrollRef={scrollRef} sphereContainer={contextObject.sphereContainer} pepperRef={contextObject.pepperRef} mousePos={mousePosRef.current} />} */}
 

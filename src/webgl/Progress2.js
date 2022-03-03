@@ -9,7 +9,7 @@ import { GUI } from 'dat.gui'
 import fragmentShader from './shaders/progress/fragmentShader2.glsl'
 import vertexShader from './shaders/progress/vertexShader2.glsl'
 
-export default function Progress2({ mousePos, progressContainer, scrollRef, state }) {
+export default function Progress2({ mousePos, progressContainer, scrollRef, state, sliderProgress }) {
   // Refs
   const materialRef = useRef()
   const sphereRef = useRef()
@@ -34,12 +34,12 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
       color: "#000"
     },
     "DESIGN": {
-      uDisplacementFrequency: 0.01520,
-      uDisplacementStrength: 30
+      uDisplacementFrequency: 0.01,
+      uDisplacementStrength: 10
     },
     "DEVELOPMENT": {
-      uDistortionFrequency: 0.006,
-      uDistortionStrength: 150
+      uDistortionFrequency: 0.005,
+      uDistortionStrength: 50
     },
     "FEEDBACK": {
       uFresnelOffset: -0.5,
@@ -195,8 +195,11 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
 
 
       // CHANGING
-      gsap.to(materialRef.current.uniforms.uSize, { value: (-mousePos.x + window.innerWidth / 2) / window.innerWidth / 2 + 0.5 })
-      materialRef.current.uniforms.uColor.value = new THREE.Color(`hsl(${normalMouse.y * 360},70%,8%)`)
+      gsap.to(materialRef.current.uniforms.uSize, { value: sliderProgress.x / 2 + 0.5 })
+      completed.current["BRIEFING"].size = sliderProgress.x / 2 + 0.5
+      materialRef.current.uniforms.uColor.value = new THREE.Color(`hsl(${sliderProgress.y * 360},70%,8%)`)
+      completed.current["BRIEFING"].color = `hsl(${sliderProgress.y * 360},70%,8%)`
+
     }
     else if (state.current == "DESIGN") {
       // DEFAULTS
@@ -210,8 +213,10 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
       gsap.to(materialRef.current.uniforms.uFresnelMultiplier, { value: completed.current["FEEDBACK"].uFresnelMultiplier })
 
       // CHANGING
-      gsap.to(materialRef.current.uniforms.uDisplacementFrequency, { value: normalMouse.y * 0.01 })
-      gsap.to(materialRef.current.uniforms.uDisplacementStrength, { value: normalMouse.x * 60 + 20 })
+      gsap.to(materialRef.current.uniforms.uDisplacementFrequency, { value: sliderProgress.y * 0.01 + 0.01 })
+      completed.current["DESIGN"].uDisplacementFrequency = sliderProgress.y * 0.01 + 0.01
+      gsap.to(materialRef.current.uniforms.uDisplacementStrength, { value: sliderProgress.x * 50 + 10 })
+      completed.current["DESIGN"].uDisplacementStrength = sliderProgress.x * 50 + 10
 
     }
     else if (state.current == "DEVELOPMENT") {
@@ -227,8 +232,10 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
 
 
       // CHANGING
-      gsap.to(materialRef.current.uniforms.uDistortionFrequency, { value: normalMouse.y * 0.008 })
-      gsap.to(materialRef.current.uniforms.uDistortionStrength, { value: normalMouse.x * 200 + 20 })
+      gsap.to(materialRef.current.uniforms.uDistortionFrequency, { value: sliderProgress.y * 0.006 + 0.005 })
+      completed.current["DEVELOPMENT"].uDistortionFrequency = sliderProgress.y * 0.006 + 0.005
+      gsap.to(materialRef.current.uniforms.uDistortionStrength, { value: sliderProgress.x * 100 + 50 })
+      completed.current["DEVELOPMENT"].uDistortionStrength = sliderProgress.x * 100 + 50
 
     }
     else if (state.current == "FEEDBACK") {
@@ -243,11 +250,12 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
       gsap.to(materialRef.current.uniforms.uDistortionStrength, { value: completed.current["DEVELOPMENT"].uDistortionStrength })
 
       // CHANGING
-      gsap.to(materialRef.current.uniforms.uFresnelOffset, { value: (normalMouse.x - 0.5) * 1 })
-      gsap.to(materialRef.current.uniforms.uFresnelMultiplier, { value: normalMouse.y * 1 })
+      gsap.to(materialRef.current.uniforms.uFresnelOffset, { value: sliderProgress.x - 0.5 })
+      completed.current["FEEDBACK"].uFresnelOffset = sliderProgress.x - 0.5
+      gsap.to(materialRef.current.uniforms.uFresnelMultiplier, { value: sliderProgress.y * 1 + 0.9 })
+      completed.current["FEEDBACK"].uFresnelMultiplier = sliderProgress.y * 1 + 0.9
 
     }
-
 
   })
 

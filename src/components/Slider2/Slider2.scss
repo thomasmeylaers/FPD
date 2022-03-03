@@ -1,4 +1,4 @@
-.slider {
+.slider2 {
   cursor: pointer;
   position: relative;
   z-index: 5;
@@ -10,6 +10,9 @@
     svg {
       position: absolute;
       top: -3.5px;
+    }
+    &:active {
+      cursor: pointer;
     }
   }
   .slider_wrapper {

@@ -9,7 +9,7 @@ export default function ImageTile({ img, title, text, even, id, imgUrl }) {
   function mouseEnter(e) {
     gsap.to(contextObject.materialsRef.current[img - 1].uniforms.progress, {
       value: 1,
-      duration: 0.8,
+      duration: 1.2,
       // ease: 'power1.out',
     })
   }
@@ -17,7 +17,7 @@ export default function ImageTile({ img, title, text, even, id, imgUrl }) {
   function mouseLeave(e) {
     gsap.to(contextObject.materialsRef.current[img - 1].uniforms.progress, {
       value: 0,
-      duration: 0.8,
+      duration: 1.2,
       // ease: 'power1.out',
     })
   }
