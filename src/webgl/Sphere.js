@@ -53,20 +53,20 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
   // useEffect
 
-  // const gui = new GUI()
+  const gui = new GUI()
   useEffect(() => {
 
-    // const folder = gui.addFolder("Displacement")
-    // folder.add(materialRef.current.uniforms.uDistortionFrequency, 'value', 0, 0.05, 0.001)
-    // folder.add(materialRef.current.uniforms.uDistortionStrength, 'value', 0, 200, 1)
-    // folder.add(materialRef.current.uniforms.uDisplacementFrequency, 'value', 0, 0.05, 0.001)
-    // folder.add(materialRef.current.uniforms.uDisplacementStrength, 'value', 0, 200, 1)
-    // folder.open()
-    // const fresnelFolder = gui.addFolder("FresnelFolder")
-    // fresnelFolder.add(materialRef.current.uniforms.uFresnelOffset, 'value', -3, 3, 0.1)
-    // fresnelFolder.add(materialRef.current.uniforms.uFresnelMultiplier, 'value', 0, 4, 0.1)
-    // fresnelFolder.add(materialRef.current.uniforms.uFresnelPower, 'value', 0, 3, 0.1)
-    // fresnelFolder.open()
+    const folder = gui.addFolder("Displacement")
+    folder.add(materialRef.current.uniforms.uDistortionFrequency, 'value', 0, 0.05, 0.001)
+    folder.add(materialRef.current.uniforms.uDistortionStrength, 'value', 0, 200, 1)
+    folder.add(materialRef.current.uniforms.uDisplacementFrequency, 'value', 0, 0.05, 0.001)
+    folder.add(materialRef.current.uniforms.uDisplacementStrength, 'value', 0, 200, 1)
+    folder.open()
+    const fresnelFolder = gui.addFolder("FresnelFolder")
+    fresnelFolder.add(materialRef.current.uniforms.uFresnelOffset, 'value', -3, 3, 0.1)
+    fresnelFolder.add(materialRef.current.uniforms.uFresnelMultiplier, 'value', 0, 4, 0.1)
+    fresnelFolder.add(materialRef.current.uniforms.uFresnelPower, 'value', 0, 3, 0.1)
+    fresnelFolder.open()
 
     startProgress.current = 0
     // gsap.to(sphereRef.current.position, {
@@ -125,8 +125,8 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
     materialRef.current.uniforms.uMouseNormal.value = new THREE.Vector2(mousePos.x + window.innerWidth / 2, mousePos.y + window.innerHeight / 2)
     // materialRef.current.uniforms.uAnimationProgress.value = animationProgress.current.t
 
-
-    sphereRef.current.position.y = scrollRef.current * 0.05 + offsetRef.current.y
+    { }
+    sphereRef.current.position.y = scrollRef.current * (desktop ? 1 : 0.05) + offsetRef.current.y
     sphereRef.current.position.x = offsetRef.current.x
     materialRef.current.uniforms.uLightBColor.value = new THREE.Color(lightB.current.color.value)
     materialRef.current.uniforms.uLightAColor.value = new THREE.Color(lightA.current.color.value)
@@ -190,7 +190,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
 
   return (
-    <mesh ref={sphereRef} position={[280, -60, 0]}>
+    <mesh ref={sphereRef} position={[280, -60, -50]}>
       <sphereGeometry ref={geometryRef} args={[sphereContainer.current.width, 256, 256]} />
       {/* <meshBasicMaterial /> */}
       {/* <bufferGeometry ref={bufferGeometryRef} attach='geometry' >
@@ -221,7 +221,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
           uFresnelOffset: { value: 0.1 },
           uFresnelMultiplier: { value: 0.9 },
-          uFresnelPower: { value: 3 },
+          uFresnelPower: { value: 2.5 },
 
           // uFresnelOffset: { value: -1.609 },
           // uFresnelMultiplier: { value: 2.587 },
