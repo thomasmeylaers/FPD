@@ -71,6 +71,7 @@
   @include breakpoint-down(sm) {
     .sphere {
       width: 60vw;
+      top: 50%;
     }
     .text {
       width: 90%;

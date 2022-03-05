@@ -16,6 +16,8 @@ import Proces from "../components/Home/Sections/Proces/Proces";
 import Diensten from "../components/Home/Sections/Diensten/Diensten";
 import Contact from "../components/Home/Sections/Contact/Contact";
 import Loader from "../components/Loader/Loader";
+import Hamburger from "../components/Hamburger/Hamburger";
+import MobileNav from "../components/MobileNav/MobileNav";
 
 export const WebGLContext = React.createContext()
 
@@ -52,7 +54,6 @@ const IndexPage = () => {
   const [loading, setLoading] = useState(true)
   const [windowDefined, setWindowDefined] = useState(false)
   const [desktop, setDesktop] = useState(true)
-
 
 
   //Context
@@ -244,7 +245,9 @@ const IndexPage = () => {
     <>
       <WebGLContext.Provider value={contextObject}>
         <Loader />
-        <main onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
+        <Hamburger />
+        <MobileNav selected={'over ons'} />
+        <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
           <Nav selected="over ons" />
           <Header />
           <Over />

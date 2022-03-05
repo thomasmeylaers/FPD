@@ -12,8 +12,10 @@ export default function Footer({ selected }) {
       <div className="hr"></div>
       <div className="content_wrapper scroll_reveal">
         <div className="link_wrapper">
-          <Link to="/" className="link">Fb</Link>
-          <Link to="/" className="link">Ig</Link>
+          <div className="">
+            <Link to="/" className="link">Fb</Link>
+            <Link to="/" className="link">Ig</Link>
+          </div>
           <Link to="/" className="link">+32 497 68 90 56</Link>
         </div>
         <div className="nav_wrapper">

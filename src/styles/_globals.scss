@@ -76,6 +76,11 @@ body {
 .skewed {
   transform: skewY(5deg);
 }
+.nav_reveal {
+  transform-origin: center left;
+  transform: translateY(2rem) skewY(5deg);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
 
 .scroll_reveal {
   transform-origin: center left;
@@ -129,4 +134,10 @@ body {
   background-color: pink;
   background-size: cover;
   background-position: center;
+}
+
+.sticky {
+  background-color: red;
+  position: fixed;
+  top: 50px;
 }
