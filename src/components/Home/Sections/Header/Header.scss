@@ -34,6 +34,20 @@
     bottom: 15%;
     left: 15%;
   }
+
+  @include breakpoint-up(xl) {
+    .sphere {
+      left: 55%;
+      width: 12%;
+      bottom: 45%;
+    }
+    .text {
+      font-size: 1.6rem;
+      width: 35%;
+      left: 5%;
+    }
+  }
+
   @include breakpoint-down(lg) {
     .title {
       font-size: 3.25rem;
@@ -70,7 +84,7 @@
   }
   @include breakpoint-down(sm) {
     .sphere {
-      width: 60vw;
+      width: 50vw;
       top: 50%;
     }
     .text {

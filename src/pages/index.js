@@ -181,7 +181,12 @@ const IndexPage = () => {
         opacity: 1,
         duration: 1,
         delay: -2
+      }).to('.hamburger', {
+        opacity: 1,
+        delay: -3,
+        duration: 2
       })
+
     }
   }, [loading])
 

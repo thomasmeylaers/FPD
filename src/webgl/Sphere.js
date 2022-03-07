@@ -92,6 +92,8 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
     setLoading(false)
 
+
+
   }, [])
 
   const lastMouseX = useRef(0)
@@ -120,12 +122,15 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
       })
     }
     // uniforms
+    if (window.innerWidth > 1800) {
+      materialRef.current.uniforms.uSize2.value = 0.6
+    }
     materialRef.current.uniforms.time.value = tick * 0.5
     materialRef.current.uniforms.uMouse.value = new THREE.Vector2(mousePos.x, mousePos.y)
     materialRef.current.uniforms.uMouseNormal.value = new THREE.Vector2(mousePos.x + window.innerWidth / 2, mousePos.y + window.innerHeight / 2)
     // materialRef.current.uniforms.uAnimationProgress.value = animationProgress.current.t
 
-    { }
+
     sphereRef.current.position.y = scrollRef.current * (desktop ? 1 : 0.05) + offsetRef.current.y
     sphereRef.current.position.x = offsetRef.current.x
     materialRef.current.uniforms.uLightBColor.value = new THREE.Color(lightB.current.color.value)
@@ -238,6 +243,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
 
           uOffset: { value: new THREE.Vector3() },
+          uSize2: { value: 0.8 },
         }}
         defines={{
           USE_TANGENT: ''

@@ -25,6 +25,7 @@ uniform float uFresnelPower;
 uniform float uSpeed;
 
 uniform float time;
+uniform float uSize2;
 
 varying vec3 vColor;
 
@@ -47,7 +48,7 @@ vec3 getDisplacedPosition(vec3 _position)
 void main()
 {
     // Position
-    vec3 newPosition = position *mix(1.,0.8,uAnimationProgress);
+    vec3 newPosition = position *mix(1.,uSize2,uAnimationProgress);
   // newPosition.x -= uMouse.x *0.1;
   // newPosition.y -= uMouse.y *0.1;
     vec3 displacedPosition = getDisplacedPosition(newPosition);
