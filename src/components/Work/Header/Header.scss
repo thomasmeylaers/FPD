@@ -1,0 +1,19 @@
+.work-header {
+  position: relative;
+  padding-top: 10rem;
+  .title {
+    font-size: max(4.6666666667vw, 50px);
+    font-weight: 500;
+    .red {
+      color: $brightRed;
+    }
+  }
+  .sphere-container {
+    position: absolute;
+    width: 30%;
+    height: 10rem;
+    // background-color: red;
+    right: 5%;
+    top: 15rem;
+  }
+}

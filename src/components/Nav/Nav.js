@@ -6,7 +6,7 @@ export default function Nav({ selected }) {
   const textEffect = useRef([])
   const navLinks = useRef([])
   const [navSelected, setNavSelected] = useState(selected)
-  const navArray = ["over ons", "werk", "contact", "diensten"]
+  const navArray = ["over ons", "werk", "diensten", "contact"]
   useEffect(() => {
     const items = ["over ons", "portfolio", "diensten", "contact"]
     if (textEffect.current[3]) {
@@ -38,12 +38,12 @@ export default function Nav({ selected }) {
 
       <div data-scroll className="container text-reveal">
         <div className="nav__wrapper">
-          <Link to="/">
+          <Link to="/werk">
             <StaticImage placeholder="blurred" className="nav__logo" src="../../images/FPD_logo.png" alt="Fresh Pepper Design Logo" /></Link>
           <div className="nav__links__wrapper">
             {navArray.map((element, index) => {
               return (
-                <Link to={"/"} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
+                <Link to={`${element !== 'over ons' ? element : '/'}`} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
                   {element}
                 </Link>
               )

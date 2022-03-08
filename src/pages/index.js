@@ -159,7 +159,7 @@ const IndexPage = () => {
       })
 
       // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-      ScrollTrigger.addEventListener("refresh", () => scrollObject.current.update());
+      // ScrollTrigger.addEventListener("refresh", () => scrollObject.current.update());
 
 
       // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
@@ -260,6 +260,7 @@ const IndexPage = () => {
           <Proces />
           <Diensten />
           <Contact />
+
         </main>
         <div className="bg"></div>
         {windowDefined ? <AnimationCanvas /> : ""}
@@ -274,7 +275,3 @@ export default IndexPage
 
 
 
-// FEEDBACK
-// Rechtse slider soms bedekt
-// Sliders anders doen
-// Service centreren

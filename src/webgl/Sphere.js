@@ -196,7 +196,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
   return (
     <mesh ref={sphereRef} position={[280, -60, -50]}>
-      <sphereGeometry ref={geometryRef} args={[sphereContainer.current.width, 256, 256]} />
+      <sphereGeometry ref={geometryRef} args={[sphereContainer.current.width, 128, 128]} />
       {/* <meshBasicMaterial /> */}
       {/* <bufferGeometry ref={bufferGeometryRef} attach='geometry' >
         <bufferAttribute
@@ -218,7 +218,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
           uLightAColor: { value: lightA.current.color.instance },
           uLightAPosition: { value: new THREE.Vector3(1, 1, 0) },
           uLightAIntensity: { value: lightA.current.intensity },
-          uSubdivision: { value: new THREE.Vector2(400, 400) },
+          uSubdivision: { value: new THREE.Vector2(128, 128) },
           uLightBColor: { value: lightB.current.color.instance },
           uLightBPosition: { value: new THREE.Vector3(- 1, - 1, 0) },
           uLightBIntensity: { value: lightB.current.intensity },
