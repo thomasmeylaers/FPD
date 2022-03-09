@@ -1,0 +1,21 @@
+.werk-pictures {
+  @include breakpoint-up(lg) {
+    margin-top: 10rem;
+    .content-wrapper {
+      margin: 0 auto;
+      margin-top: 5rem;
+      max-width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 10rem;
+    }
+  }
+  @include breakpoint-down(lg) {
+    .content-wrapper {
+      margin: 0;
+      max-width: 100%;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+}

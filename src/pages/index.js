@@ -249,23 +249,20 @@ const IndexPage = () => {
   return (
     <>
       <WebGLContext.Provider value={contextObject}>
-        <Loader />
+        <Loader loading={loading} />
         {!desktop ? <Hamburger /> : ""}
         <MobileNav selected={'over ons'} />
         <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
           <Nav selected="over ons" />
           <Header />
           <Over />
-          <Werk />
+          <Werk materialsRef={materialsRef} />
           <Proces />
           <Diensten />
-          <Contact />
-
+          <Contact scrollObject={scrollObject} selected={'over ons'} />
         </main>
         <div className="bg"></div>
         {windowDefined ? <AnimationCanvas /> : ""}
-
-
       </WebGLContext.Provider>
     </>
   )

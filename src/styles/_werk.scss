@@ -1,4 +1,7 @@
 .work-main {
-  background-color: $white;
   color: $background;
+  .contact {
+    background-color: $background;
+    color: $white;
+  }
 }

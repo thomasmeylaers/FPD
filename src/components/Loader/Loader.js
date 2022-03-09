@@ -2,32 +2,52 @@ import React, { useContext, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { StaticImage } from 'gatsby-plugin-image'
 import { WebGLContext } from '../../pages'
+import { WorkContext } from '../../pages/werk'
 
-export default function Loader() {
-  const contextObject = useContext(WebGLContext)
+export default function Loader({ loading }) {
+  // const contextObject = useContext(WebGLContext)
+  // const workContext = useContext(WorkContext)
 
 
   useEffect(() => {
-    // setTimeout(function () {
-    //   contextObject.setLoading(false)
-    // }, 100000)
+    // gsap.to('.caption', {
+    //   opacity: 1,
+    //   duration: 0.5
+    // })
 
   }, [])
 
   useEffect(() => {
-    if (!contextObject.loading) {
+    if (!loading) {
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
 
       tl.to('.caption', {
-        opacity: 0
+        opacity: 0,
+        delay: 1
       }).to('.loader', {
         opacity: 0,
         duration: 1.5
-      }).to('.loader', {
+      }, "-=0.2").to('.loader', {
         display: 'none',
-      }, "-=2")
+      }, "-=1.3")
     }
-  }, [contextObject.loading])
+  }, [loading])
+
+
+  // useEffect(() => {
+  //   if (!contextObject.loading) {
+  //     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
+
+  //     tl.to('.caption', {
+  //       opacity: 0
+  //     }).to('.loader', {
+  //       opacity: 0,
+  //       duration: 1.5
+  //     }).to('.loader', {
+  //       display: 'none',
+  //     }, "-=2")
+  //   }
+  // }, [contextObject.loading])
 
   return (
     <div className={`loader `}>

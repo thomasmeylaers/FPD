@@ -2,21 +2,21 @@ import React, { useRef, useEffect } from 'react'
 import { useFrame, useThree } from 'react-three-fiber'
 import * as THREE from 'three'
 
-import fragmentShader from './shaders/pictures/fragmentShader.glsl'
-import vertexShader from './shaders/pictures/vertexShader.glsl'
+import fragmentShader from './shaders/workPictures/fragmentShader.glsl'
+import vertexShader from './shaders/workPictures/vertexShader.glsl'
 
-export default function Pictures({ scrollRef, materialsRef }) {
+export default function WorkPictures({ scrollRef, materialsRef }) {
   const imageArray = useRef()
   const imageStore = useRef()
   const materials = useRef()
 
   const state = useThree()
 
+
   useEffect(() => {
     materials.current = []
     materialsRef.current = materials.current
     imageArray.current = [...document.querySelectorAll('.imagePicture')]
-
     imageStore.current = imageArray.current.map(img => {
       let bounds = img.getBoundingClientRect()
       let geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 10, 10);
@@ -36,7 +36,7 @@ export default function Pictures({ scrollRef, materialsRef }) {
           texture1: { type: "f", value: new THREE.TextureLoader().load(`${img.src.slice(0, -4)}_1.jpg`) },
           texture2: { type: "f", value: new THREE.TextureLoader().load(`${img.src.slice(0, -4)}_2.jpg`) },
 
-          displacement: { type: "f", value: new THREE.TextureLoader().load('images/disp1.jpg') },
+          displacement: { type: "f", value: new THREE.TextureLoader().load('/images/disp1.jpg') },
           resolution: { type: "v4", value: new THREE.Vector4() },
         },
         side: THREE.DoubleSide,
@@ -68,6 +68,8 @@ export default function Pictures({ scrollRef, materialsRef }) {
     const tick = clock.getElapsedTime()
 
     imageStore.current.forEach(o => {
+      // o.mesh.position.y = scrollRef.current - o.top + window.innerHeight / 2 - o.height / 2;
+      // o.mesh.position.x = o.left - window.innerWidth / 2 + o.width / 2;
       o.mesh.position.y = scrollRef.current - o.top + window.innerHeight / 2 - o.height / 2;
       o.mesh.position.x = o.left - window.innerWidth / 2 + o.width / 2;
     })
@@ -78,6 +80,7 @@ export default function Pictures({ scrollRef, materialsRef }) {
 
 
   })
+
   return (
     <>
 
