@@ -250,8 +250,8 @@ const IndexPage = () => {
     <>
       <WebGLContext.Provider value={contextObject}>
         <Loader loading={loading} />
-        {!desktop ? <Hamburger /> : ""}
-        <MobileNav selected={'over ons'} />
+        {/* {!desktop ? <Hamburger /> : ""} */}
+        {/* <MobileNav selected={'over ons'} /> */}
         <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
           <Nav selected="over ons" />
           <Header />

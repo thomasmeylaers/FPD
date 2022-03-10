@@ -29,17 +29,16 @@ export default function Over() {
         <div className="wrapper">
           <div ref={pepper} className="pepper"></div>
           <div className="content_wrapper">
-            <div className="title scroll_reveal">Lorem Ipsum is slechts een proeftekst uit het
-              drukkerij- en zetterijwezen.</div>
+            <div className="title scroll_reveal">Wij maken appplicaties, websites en digitale producten.</div>
 
             <div className="text_wrapper">
-              <div className="text scroll_reveal">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds
+              <div className="text scroll_reveal"><b>CHANGE-MAKING</b> <br /> <p>Ons team bestaat uit mensen met diverse talenten gefocust op een creative ontwikkeling.</p>
               </div>
-              <div className="text scroll_reveal">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds
+              <div className="text scroll_reveal"><b>FUTURE-PROOF</b> <br /> <p>De digitale wereld staat niet stil, daarom leveren wij producten die ook morgen nog relevant zijn.</p>
               </div>
-              <div className="text scroll_reveal">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds
+              <div className="text scroll_reveal"><b>PURPOSE-DRIVEN</b> <br /> <p>Voor wij beginnen aan het design bedenken wij een strategie om uw specifieke doelen te bereiken.</p>
               </div>
-              <div className="text_mobile scroll_reveal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ab tenetur sint, esse temporibus vero possimus, alias cumque veniam iste similique ducimus fuga quae aliquid quis ea reiciendis quos tempore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quisquam modi ducimus, nesciunt, eum impedit est adipisci eaque explicabo odit esse minus ipsum voluptatum atque nemo fugiat provident inventore quod.</div>
+              <div className="text_mobile scroll_reveal"><b>CHANGE-MAKING</b> <br /> <p>Ons team bestaat uit mensen met diverse talenten gefocust op een creative ontwikkeling.</p><b>FUTURE-PROOF</b> <br /> <p>De digitale wereld staat niet stil, daarom leveren wij producten die ook morgen nog relevant zijn.</p><b>PURPOSE-DRIVEN</b> <br /> <p>Voor wij beginnen aan het design bedenken wij een strategie om uw specifieke doelen te bereiken.</p></div>
             </div>
           </div>
         </div>

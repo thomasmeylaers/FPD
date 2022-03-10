@@ -126,7 +126,7 @@ export default function WorkSphere({ mousePos, scrollRef, pepperRef, sphereConta
           uMouse: { value: new THREE.Vector2(mousePos.x, mousePos.y) },
           uMouseNormal: { value: new THREE.Vector2(mousePos.x, mousePos.y) },
           uAnimationProgress: { value: 0 },
-          uSphereColor: { value: new THREE.Color("#789395") },
+          uSphereColor: { value: new THREE.Color("#FF0024") },
 
           uLightAColor: { value: lightA.current.color.instance },
           uLightAPosition: { value: new THREE.Vector3(1, 1, 0) },

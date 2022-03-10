@@ -22,9 +22,17 @@ export default function ImageTile({ img, title, text, even, id, imgUrl, material
     })
   }
 
+  function goToUrl(e) {
+    if (imgUrl == "winters") {
+      window.open("https://freshpepperdesign.com/winters/", "_blank")
+    } else {
+      window.open("https://maisonlaventure.be/index.html", "_blank")
+
+    }
+  }
 
   return (
-    <div id={id} className={`image_tile ${even ? "even" : ""}`}>
+    <div onClick={goToUrl} id={id} className={`image_tile ${even ? "even" : ""}`}>
       <div className="wrapper">
         {/* <div className="imagePicture"></div> */}
         {/* <StaticImage alt="astronaut" imgClassName='imgName' className='imagePicture' src='../../images/test.jpg' /> */}

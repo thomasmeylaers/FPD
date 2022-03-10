@@ -27,7 +27,8 @@ export default function Header() {
             with Focus on Aesthetics
           </div>
         </div>
-        <div id='headerAnimationTrigger' className="text skewed text-reveal" >With many years of experience in digital product development, we understand how to create user-friendly and memorable interfaces for the leading world companies. Properly and harmoniously, we integrate modern technologies into the classical graphic design aesthetics.</div>
+        {/* <div id='headerAnimationTrigger' className="text skewed text-reveal" >With many years of experience in digital product development, we understand how to create user-friendly and memorable interfaces for the leading world companies. Properly and harmoniously, we integrate modern technologies into the classical graphic design aesthetics.</div> */}
+        <div id='headerAnimationTrigger' className="text skewed text-reveal" >Wij creëren unieke digitale ervaringen voor uw bedrijf om uw doelen te bereiken. Wij integreren moderne technologie met een creatief design om een gebruiksvriendlijke interface te maken voor uw klanten en zo uw boodschap de wereld in te sturen. </div>
       </div>
       <Scroll />
     </section>

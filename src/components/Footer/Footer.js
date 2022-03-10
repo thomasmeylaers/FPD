@@ -12,20 +12,20 @@ export default function Footer({ selected }) {
       <div className="hr"></div>
       <div className="content_wrapper scroll_reveal">
         <div className="link_wrapper">
-          <div className="socials">
+          {/* <div className="socials">
             <Link to="/" className="link socials_link">Fb</Link>
             <Link to="/" className="link socials_link">Ig</Link>
-          </div>
-          <Link to="/" className="link">+32 497 68 90 56</Link>
+          </div> */}
+          <a className='link' href="tel:+32497689056">+32 497 68 90 56</a>
         </div>
         <div className="nav_wrapper">
-          {navArray.map((element, index) => {
+          {/* {navArray.map((element, index) => {
             return (
               <Link to={"/"} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
                 {element}
               </Link>
             )
-          })}
+          })} */}
         </div>
       </div>
     </div>

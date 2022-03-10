@@ -12,10 +12,10 @@ export default function Proces() {
   const [selected, setSelected] = useState("BRIEFING")
   const [lastSelected, setLastSelected] = useState("BRIEFING")
   const texten = useRef({
-    "BRIEFING": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "DESIGN": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae,s commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut,orper, neque.",
-    "DEVELOPMENT": "Op deze tekst bestaan echter talloze varianten, die alleen de eerste zinsnede (Lorem ipsum dolor sit amet, consectetur adipisicing elit) steeds gemeen hebben. Zo is bijvoorbeeld ook de volgende tekst in omloop:",
-    "FEEDBACK": "De eerste woorden van het Lorem Ipsum vinden hun oorsprong in het boek De finibus bonorum et malorum (Over de grenzen van goed en kwaad) van Marcus Tullius Cicero uit 45 voor Christus. In alinea 1.10.32 van dit boek komt namelijk de volgende zinsnede voor:"
+    "BRIEFING": "Bij de briefing fase bespreken we samen met u wat de noden zijn voor uw bedrijf en welke diensten er nodig zijn om tot uw doel te komen. Wij gaan ook een marktonderzoek doen om te kijken wat de concurrentie doet en hoe we zo goed mogelijk uw doelpubliek kunnen berijken.",
+    "DESIGN": "Wij maken een design dat uw boodschap duidelijk en op een creatieve manier overbrengt naar de klant. Wij streven naar een design dat perfect overeenkomt met het brand van uw bedrijf en gebruiksvriendelijk is voor alle mogelijk toestellen. Er is steeds een wisselwerking met u waar we regelmatig een update geven waar we staan om een zo goed mogelijk product te leveren.",
+    "DEVELOPMENT": "Als het design gefinaliseerd is gaan we over tot de ontwikkeling. Uw product wordt voor het correcte platform ontwikkeld om zo uw klanten het best te kunnen bereiken. Met onze expertise en moderne technologie zorgen we voor een creatieve, maar functionele digitale ervaring.",
+    "FEEDBACK": "Na de finalisatie en de uitrolling van het product blijft er een continue wisselwerking met u. Wij geven u data over hoe het product presteert. Samen met u proberen we zo het product te verbeteren zodat uw boodschap door zoveel mogelijk mensen gezien kan worden."
   })
   const progresses = useRef({
     "BRIEFING": { x: 0, y: 0 },
@@ -59,7 +59,7 @@ export default function Proces() {
           <SectionHeader2 >
             ONS PROCES
           </SectionHeader2>
-          <div className="title scroll_reveal">Lorem Ipsum is slechts een proeftekst uit ij- zetterijwezen. </div>
+          <div className="title scroll_reveal">Een proces waar we samenwerken om tot een finaal product te komen.</div>
         </div>
         <div className="content_wrapper">
           <div className="selector_wrapper">
@@ -68,14 +68,15 @@ export default function Proces() {
             <Selection state={[selected, setSelected]} title={"DEVELOPMENT"} number={3} sub={"Everything starts with an idea"} />
             <Selection state={[selected, setSelected]} title={"FEEDBACK"} number={4} sub={"Everything starts with an idea"} />
           </div>
-          <div className="sub_wrapper">
-            <div className="sub_hr"></div>
+          <div className="cunt">
+            <div className="sub_wrapper">
+              <div className="sub_hr"></div>
 
-            <div className="sub scroll_reveal">
-              {texten.current[selected]}
+              <div className="sub scroll_reveal">
+                {texten.current[selected]}
+              </div>
             </div>
           </div>
-
 
           <div ref={contextObject.progressContainer} className="progress_container">
             <Slider2 id="sliderVertical" state={[selected, setSelected]} />

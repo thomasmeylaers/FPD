@@ -41,13 +41,13 @@ export default function Nav({ selected }) {
           <Link to="/werk">
             <StaticImage placeholder="blurred" className="nav__logo" src="../../images/FPD_logo.png" alt="Fresh Pepper Design Logo" /></Link>
           <div className="nav__links__wrapper">
-            {navArray.map((element, index) => {
+            {/* {navArray.map((element, index) => {
               return (
                 <Link to={`${element !== 'over ons' ? element : '/'}`} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
                   {element}
                 </Link>
               )
-            })}
+            })} */}
           </div>
           <div className="nav__links__mobile">
             <div className="nav_burger">

@@ -13,7 +13,8 @@ export default function Diensten() {
             DIENSTEN
           </SectionHeader2>
           <div className="title scroll_reveal">
-            We help brands be their most inspiring selves. Own their quirks - their edge - their culture.
+            {/* We help brands be their most inspiring selves. Own their quirks - their edge - their culture. */}
+            Wij helpen bedrijven om te inspireren en de juiste oplossing te vinden voor hun noden.
           </div>
         </div>
         <div className="content_wrapper">

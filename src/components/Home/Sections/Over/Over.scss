@@ -23,6 +23,9 @@
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 1fr 1fr;
           gap: 2rem;
+          p {
+            margin-top: 0.5rem;
+          }
           .text {
             font-size: 18px;
             font-weight: 300;
@@ -49,6 +52,10 @@
             font-size: max(5.6666666667vw, 25px);
           }
           .text_wrapper {
+            p {
+              margin-top: 0rem;
+              margin-bottom: 2rem;
+            }
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
             .text {
