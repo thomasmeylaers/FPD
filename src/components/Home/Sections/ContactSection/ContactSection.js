@@ -5,7 +5,7 @@ import Footer from '../../../Footer/Footer'
 import SectionHeader from '../../../SectionHeader/SectionHeader'
 import { WebGLContext } from '../../../../pages'
 
-export default function Contact({ scrollObject, selected }) {
+export default function ContactSection({ scrollObject, selected }) {
 
   const arrowRef = useRef()
 
@@ -36,9 +36,9 @@ export default function Contact({ scrollObject, selected }) {
         <div className="title scroll_reveal">Laten we samen iets geweldig maken</div>
         <div className="sub scroll_reveal">Stuur ons een mailtje als u een vraag heeft of samen wilt werken.</div>
         <a href='mailto:info@freshpepperdesign.com' className="cta scroll_reveal">info@freshpepperdesign.com <StaticImage alt="arrow" className='arrow' src="../../images/arrow.svg" placeholder="tracedSVG" /></a>
-        <a href="tel:+32497689056" className="cta scroll_reveal">+32 497 68 90 56 <StaticImage alt="arrow" className='arrow' src="../../images/arrow.svg" placeholder="tracedSVG" /></a>
 
-        <Footer selected={selected} />
+
+        <Footer scrollObject={scrollObject} selected={selected} />
       </div>
       <div className="top" onClick={topClick}>
         <div id='bgChange2' className="arrow_wrapper">

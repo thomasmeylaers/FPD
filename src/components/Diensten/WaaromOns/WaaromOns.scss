@@ -1,0 +1,26 @@
+.waarom-ons {
+  background-color: $background;
+  color: $white;
+  padding: 10rem 0;
+  margin-bottom: -1rem;
+  .reason-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5rem;
+    .reason-wrapper {
+      width: 50%;
+      margin: 0 auto;
+      .reason-title {
+        font-weight: 400;
+        font-size: 24px;
+        margin: 1.5rem 0;
+      }
+      .reason-text {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 2ch;
+      }
+    }
+  }
+}

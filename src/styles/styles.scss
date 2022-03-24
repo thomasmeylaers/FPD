@@ -16,7 +16,7 @@
 @import "../components/Slider/Slider";
 @import "../components/Home/Sections/Diensten/Diensten";
 @import "../components/Card/Card";
-@import "../components/Home/Sections/Contact/Contact";
+@import "../components/Home/Sections/ContactSection/ContactSection";
 @import "../components/Footer/Footer";
 @import "../components/SectionHeader2/SectionHeader2";
 @import "../components/Card2/Card2";
@@ -28,3 +28,8 @@
 @import "werk";
 @import "../components/Work/Header/Header";
 @import "../components/Work/Pictures/Pictures";
+@import "contact";
+@import "../components/Diensten/DienstenSection/DienstenSection";
+@import "../components/Service/Service";
+@import "../components/Diensten/WaaromOns/WaaromOns";
+@import "../components/SectionHeader3/SectionHeader3";

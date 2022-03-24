@@ -1,47 +1,35 @@
-import * as React from "react"
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react'
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Loader from '../components/Loader/Loader';
+import Nav from '../components/Nav/Nav';
+import MobileNav from '../components/MobileNav/MobileNav';
+import Hamburger from '../components/Hamburger/Hamburger';
+import Header from '../components/Work/Header/Header';
+import DienstenSection from '../components/Diensten/DienstenSection/DienstenSection';
+import ContactSection from '../components/Home/Sections/ContactSection/ContactSection';
+import WaaromOns from '../components/Diensten/WaaromOns/WaaromOns';
 
-import Header from '../components/Work/Header/Header'
-import Nav from '../components/Nav/Nav'
-import MobileNav from "../components/MobileNav/MobileNav";
-import Hamburger from "../components/Hamburger/Hamburger";
-import WorkCanvas from "../webgl/WorkCanvas"
-import Pictures from "../components/Work/Pictures/Pictures";
-import Loader from "../components/Loader/Loader";
-import ContactSection from "../components/Home/Sections/ContactSection/ContactSection";
-
-export const WorkContext = React.createContext()
-
-
-export default function Werk() {
+export default function Diensten() {
   gsap.registerPlugin(ScrollTrigger);
 
+  // Refs
   const containerRef = useRef()
   const scrollObject = useRef()
-  const sphereContainer = useRef()
-  const materialsRef = useRef()
-  const mousePos = useRef()
-  mousePos.current = { x: 0, y: 0 }
-  const scrollRef = useRef()
-  scrollRef.current = 0
 
+  // State
   const [loading, setLoading] = useState(true)
   const [windowDefined, setWindowDefined] = useState(false)
   const [desktop, setDesktop] = useState(true)
 
-  // Context
-  let contextObject = { sphereContainer, loading, setLoading, mousePos, scrollRef, desktop, materialsRef }
 
   useEffect(() => {
     if (window !== "undefined") {
+
       if (window.innerWidth < 1200) {
         setDesktop(false)
       }
-
-
 
       // Locomotive scroll init
       scrollObject.current = new LocomotiveScroll({
@@ -52,7 +40,6 @@ export default function Werk() {
       });
 
 
-      scrollObject.current.on("scroll", scrollFunction)
       scrollObject.current.on("scroll", ScrollTrigger.update)
 
       // ScrollTrigger
@@ -86,7 +73,7 @@ export default function Werk() {
       ScrollTrigger.refresh();
     }
     setWindowDefined(true)
-
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -115,36 +102,20 @@ export default function Werk() {
     }
   }, [loading])
 
-  const handleMouseMove = (e) => {
-    if (window !== "undefined") {
-      gsap.to(mousePos.current, {
-        x: (e.pageX * 2 - window.innerWidth) / 2,
-        y: -(e.pageY * 2 - window.innerHeight) / 2,
-        duration: 2,
-        ease: 'power4.out'
-      })
-    }
-  }
-
-  const scrollFunction = (obj) => {
-    scrollRef.current = obj.scroll.y
-  }
-
   return (
     <>
-      <WorkContext.Provider value={contextObject}>
-        <Loader loading={loading} page={'werk'} />
-        <MobileNav selected={'werk'} />
-        {!desktop ? <Hamburger /> : ""}
-        <main onMouseMove={handleMouseMove} className=".main work-main" data-scroll-container ref={containerRef}>
-          <Nav scrollObject={scrollObject} selected="werk" />
-          <Header />
-          <Pictures materialsRef={materialsRef} />
-          <ContactSection scrollObject={scrollObject} selected={'werk'} />
-        </main>
-        <div className="werk-bg"></div>
-        {windowDefined ? <WorkCanvas /> : ""}
-      </WorkContext.Provider>
+      <Loader loading={loading} />
+      <MobileNav selected={'werk'} />
+      {!desktop ? <Hamburger /> : ""}
+      <main className='.main work-main' data-scroll-container ref={containerRef}>
+        <Nav scrollObject={scrollObject} selected={"diensten"} />
+        {/* <Header caption={"test"} /> */}
+        <DienstenSection scrollObject={scrollObject} />
+        <WaaromOns />
+        <ContactSection scrollObject={scrollObject} selected={'diensten'} />
+      </main>
+      <div className="werk-bg"></div>
+
     </>
   )
 }

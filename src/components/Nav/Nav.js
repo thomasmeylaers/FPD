@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-export default function Nav({ selected }) {
+export default function Nav({ scrollObject, selected }) {
   const textEffect = useRef([])
   const navLinks = useRef([])
   const [navSelected, setNavSelected] = useState(selected)
@@ -33,21 +33,28 @@ export default function Nav({ selected }) {
   const hover = () => {
     textEffect.current[0].classList.remove('play');
   }
+
+  const click = () => {
+    if (scrollObject.current) {
+      scrollObject.current.destroy()
+    }
+  }
+
   return (
     <div className='nav' data-scroll-section>
 
       <div data-scroll className="container text-reveal">
         <div className="nav__wrapper">
-          <Link to="/werk">
+          <Link onClick={click} to="/">
             <StaticImage placeholder="blurred" className="nav__logo" src="../../images/FPD_logo.png" alt="Fresh Pepper Design Logo" /></Link>
           <div className="nav__links__wrapper">
-            {/* {navArray.map((element, index) => {
+            {navArray.map((element, index) => {
               return (
-                <Link to={`${element !== 'over ons' ? element : '/'}`} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
+                <Link onClick={click} to={`${element !== 'over ons' ? '/' + element : '/'}`} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link ${element == navSelected || element == selected ? "selected" : ""}`}>
                   {element}
                 </Link>
               )
-            })} */}
+            })}
           </div>
           <div className="nav__links__mobile">
             <div className="nav_burger">

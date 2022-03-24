@@ -77,8 +77,8 @@ void main()
     fresnel = pow(max(0.0, fresnel), uFresnelPower);
 
     // Color
-    vec3 Aoffset = vec3(-2,0.,-1);
-    vec3 Boffset =  vec3(3.,0.,2.);
+    vec3 Aoffset = vec3(-1.2,-0.2,0.);
+    vec3 Boffset =  vec3(1.,0.,0.);
     float lightAIntensity = max(0.0, - dot(computedNormal.xyz, normalize(- uLightAPosition - Aoffset))) * uLightAIntensity;
     float lightBIntensity = max(0.0, - dot(computedNormal.xyz, normalize(- uLightBPosition - Boffset))) * uLightBIntensity;
 

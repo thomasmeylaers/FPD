@@ -1,0 +1,40 @@
+.sectionheader-3 {
+  display: flex;
+  .title-wrapper {
+    min-width: 25%;
+    .title {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: light;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 0;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid;
+        margin-right: 7px;
+        opacity: 1;
+        transform: translateZ(0);
+        transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+  }
+  .caption-wrapper {
+    margin-left: 20%;
+    .sectionheader-caption {
+      font-size: 40px;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.white {
+  color: $white;
+}
+.black {
+  color: $background;
+}

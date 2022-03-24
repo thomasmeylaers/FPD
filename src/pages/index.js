@@ -14,10 +14,11 @@ import Over from "../components/Home/Sections/Over/Over";
 import Werk from "../components/Home/Sections/Werk/Werk";
 import Proces from "../components/Home/Sections/Proces/Proces";
 import Diensten from "../components/Home/Sections/Diensten/Diensten";
-import Contact from "../components/Home/Sections/Contact/Contact";
+import Contact from "../components/Home/Sections/ContactSection/ContactSection";
 import Loader from "../components/Loader/Loader";
 import Hamburger from "../components/Hamburger/Hamburger";
 import MobileNav from "../components/MobileNav/MobileNav";
+import ContactSection from "../components/Home/Sections/ContactSection/ContactSection";
 
 export const WebGLContext = React.createContext()
 
@@ -253,13 +254,13 @@ const IndexPage = () => {
         {/* {!desktop ? <Hamburger /> : ""} */}
         {/* <MobileNav selected={'over ons'} /> */}
         <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
-          <Nav selected="over ons" />
+          <Nav scrollObject={scrollObject} selected="over ons" />
           <Header />
           <Over />
           <Werk materialsRef={materialsRef} />
           <Proces />
           <Diensten />
-          <Contact scrollObject={scrollObject} selected={'over ons'} />
+          <ContactSection scrollObject={scrollObject} selected={'over ons'} />
         </main>
         <div className="bg"></div>
         {windowDefined ? <AnimationCanvas /> : ""}

@@ -29,20 +29,20 @@ export default function WorkSphere({ mousePos, scrollRef, pepperRef, sphereConta
   // LIGHTS
   lightA.current = {}
 
-  lightA.current.intensity = 2
+  lightA.current.intensity = 0.8
 
   lightA.current.color = {}
-  lightA.current.color.value = '#fff'
+  lightA.current.color.value = '#ff000e'
   lightA.current.color.instance = new THREE.Color(lightA.current.color.value)
 
   lightA.current.spherical = new THREE.Spherical(1, 0.615, 2.049)
 
   lightB.current = {}
 
-  lightB.current.intensity = 2
+  lightB.current.intensity = 0.8
 
   lightB.current.color = {}
-  lightB.current.color.value = '#fff'
+  lightB.current.color.value = '#ff000e'
   lightB.current.color.instance = new THREE.Color(lightB.current.color.value)
 
   lightB.current.spherical = new THREE.Spherical(1, 2.561, - 1.844)
@@ -118,7 +118,7 @@ export default function WorkSphere({ mousePos, scrollRef, pepperRef, sphereConta
 
   return (
     <mesh ref={sphereRef} position={[100, -60, -50]}>
-      <sphereGeometry ref={geometryRef} args={[window.innerWidth * 0.16, 128, 128]} />
+      <sphereGeometry ref={geometryRef} args={[window.innerWidth * 0.14, 64, 64]} />
       <shaderMaterial
         ref={materialRef}
         uniforms={{
@@ -126,18 +126,18 @@ export default function WorkSphere({ mousePos, scrollRef, pepperRef, sphereConta
           uMouse: { value: new THREE.Vector2(mousePos.x, mousePos.y) },
           uMouseNormal: { value: new THREE.Vector2(mousePos.x, mousePos.y) },
           uAnimationProgress: { value: 0 },
-          uSphereColor: { value: new THREE.Color("#FF0024") },
+          uSphereColor: { value: new THREE.Color("#f5f5f5") },
 
           uLightAColor: { value: lightA.current.color.instance },
           uLightAPosition: { value: new THREE.Vector3(1, 1, 0) },
           uLightAIntensity: { value: lightA.current.intensity },
-          uSubdivision: { value: new THREE.Vector2(128, 128) },
+          uSubdivision: { value: new THREE.Vector2(64, 64) },
           uLightBColor: { value: lightB.current.color.instance },
           uLightBPosition: { value: new THREE.Vector3(- 1, - 1, 0) },
           uLightBIntensity: { value: lightB.current.intensity },
           uSpeed: { value: 0 },
 
-          uFresnelOffset: { value: -0.3 },
+          uFresnelOffset: { value: -0.7 },
           uFresnelMultiplier: { value: 0.9 },
           uFresnelPower: { value: 2.5 },
 

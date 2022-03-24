@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { WorkContext } from '../../../pages/werk'
 
-export default function Header() {
+export default function Header({ caption }) {
   const contextObject = useContext(WorkContext)
 
   return (
