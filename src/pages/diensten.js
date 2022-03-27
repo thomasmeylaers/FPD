@@ -10,6 +10,12 @@ import Header from '../components/Work/Header/Header';
 import DienstenSection from '../components/Diensten/DienstenSection/DienstenSection';
 import ContactSection from '../components/Home/Sections/ContactSection/ContactSection';
 import WaaromOns from '../components/Diensten/WaaromOns/WaaromOns';
+import DienstenHeader from '../components/Diensten/DienstenHeader/DienstenHeader';
+import DienstenCanvas from '../webgl/DienstenCanvas';
+
+export const DienstenContext = React.createContext()
+
+
 
 export default function Diensten() {
   gsap.registerPlugin(ScrollTrigger);
@@ -17,11 +23,19 @@ export default function Diensten() {
   // Refs
   const containerRef = useRef()
   const scrollObject = useRef()
+  const sphereContainer = useRef()
+  const mousePos = useRef()
+  mousePos.current = { x: 0, y: 0 }
+  const scrollRef = useRef()
+  scrollRef.current = 0
 
   // State
   const [loading, setLoading] = useState(true)
   const [windowDefined, setWindowDefined] = useState(false)
   const [desktop, setDesktop] = useState(true)
+
+  // Context
+  let contextObject = { sphereContainer, mousePos, loading, setLoading, scrollRef }
 
 
   useEffect(() => {
@@ -39,7 +53,7 @@ export default function Diensten() {
         multiplier: .8
       });
 
-
+      scrollObject.current.on("scroll", scrollFunction)
       scrollObject.current.on("scroll", ScrollTrigger.update)
 
       // ScrollTrigger
@@ -102,20 +116,37 @@ export default function Diensten() {
     }
   }, [loading])
 
+  const handleMouseMove = (e) => {
+    if (window !== "undefined") {
+      gsap.to(mousePos.current, {
+        x: (e.pageX * 2 - window.innerWidth) / 2,
+        y: -(e.pageY * 2 - window.innerHeight) / 2,
+        duration: 2,
+        ease: 'power4.out'
+      })
+    }
+  }
+
+  const scrollFunction = (obj) => {
+    scrollRef.current = obj.scroll.y
+  }
+
   return (
     <>
-      <Loader loading={loading} />
-      <MobileNav selected={'werk'} />
-      {!desktop ? <Hamburger /> : ""}
-      <main className='.main work-main' data-scroll-container ref={containerRef}>
-        <Nav scrollObject={scrollObject} selected={"diensten"} />
-        {/* <Header caption={"test"} /> */}
-        <DienstenSection scrollObject={scrollObject} />
-        <WaaromOns />
-        <ContactSection scrollObject={scrollObject} selected={'diensten'} />
-      </main>
-      <div className="werk-bg"></div>
-
+      <DienstenContext.Provider value={contextObject}>
+        <Loader loading={loading} />
+        <MobileNav selected={'werk'} />
+        {!desktop ? <Hamburger /> : ""}
+        <main onMouseMove={handleMouseMove} className='.main work-main' data-scroll-container ref={containerRef}>
+          <Nav scrollObject={scrollObject} selected={"diensten"} />
+          <DienstenHeader />
+          <DienstenSection scrollObject={scrollObject} />
+          <WaaromOns />
+          <ContactSection scrollObject={scrollObject} selected={'diensten'} />
+        </main>
+        <div className="werk-bg"></div>
+        {windowDefined ? <DienstenCanvas /> : ""}
+      </DienstenContext.Provider>
     </>
   )
 }
