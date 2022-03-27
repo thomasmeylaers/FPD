@@ -6,7 +6,8 @@ import { gsap } from 'gsap'
 export default function MobileNav({ selected }) {
   const navLinks = useRef([])
   const [navSelected, setNavSelected] = useState(selected)
-  const navArray = ["over ons", "werk", "contact", "diensten"]
+  const navArray = ["over ons", "werk", "diensten", "contact"]
+
 
 
 
@@ -18,7 +19,7 @@ export default function MobileNav({ selected }) {
         <div className="nav_links">
           {navArray.map((element, index) => {
             return (
-              <Link to={"/"} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link nav_reveal ${element == navSelected || element == selected ? "selected" : ""}`}>
+              <Link to={`${element !== 'over ons' ? '/' + element : '/'}`} ref={(element) => navLinks.current.push(element)} key={index} className={`nav_link nav_reveal ${element == navSelected || element == selected ? "selected" : ""}`}>
                 {element}
               </Link>
             )
@@ -26,10 +27,10 @@ export default function MobileNav({ selected }) {
         </div>
         <div className="link_wrapper">
           <div className='nav_reveal'>
-            <Link to="/" className="link ">Fb</Link>
-            <Link to="/" className="link ">Ig</Link>
+            <a href="/" className="link ">Fb</a>
+            <a href="/" className="link ">Ig</a>
           </div>
-          <Link to="/" className="link nav_reveal">+32 497 68 90 56</Link>
+          <a className="link nav_reveal" href="tel:+32497689056">+32 497 68 90 56</a>
         </div>
       </div>
     </div>

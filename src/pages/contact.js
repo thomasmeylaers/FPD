@@ -7,6 +7,8 @@ import Nav from "../components/Nav/Nav"
 import Loader from '../components/Loader/Loader';
 import Footer from '../components/Footer/Footer';
 import ContactSection from '../components/Home/Sections/ContactSection/ContactSection';
+import Hamburger from '../components/Hamburger/Hamburger';
+import MobileNav from '../components/MobileNav/MobileNav';
 
 export default function Contact() {
   gsap.registerPlugin(ScrollTrigger)
@@ -18,9 +20,13 @@ export default function Contact() {
   // State
   const [windowDefined, setWindowDefined] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [desktop, setDesktop] = useState(true)
 
   useEffect(() => {
     if (window !== "undefined") {
+      if (window.innerWidth < 1200) {
+        setDesktop(false)
+      }
       // Locomotive scroll init
       scrollObject.current = new LocomotiveScroll({
         el: containerRef.current,
@@ -86,6 +92,8 @@ export default function Contact() {
   return (
     <>
       <Loader loading={loading} />
+      {!desktop ? <Hamburger /> : ""}
+      <MobileNav selected={'contact'} />
       <main className=".main contact-page" data-scroll-container ref={containerRef}>
         <Nav scrollObject={scrollObject} selected="contact" />
         <ContactSection scrollObject={scrollObject} selected={'contact'} />

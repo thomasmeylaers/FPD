@@ -1,5 +1,4 @@
 .werk-pictures {
-  background-color: $white;
   @include breakpoint-up(lg) {
     margin-top: 10rem;
     .content-wrapper {
@@ -12,6 +11,8 @@
     }
   }
   @include breakpoint-down(lg) {
+    background-color: $white;
+
     .content-wrapper {
       margin: 0;
       max-width: 100%;
