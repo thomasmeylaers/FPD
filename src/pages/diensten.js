@@ -135,7 +135,7 @@ export default function Diensten() {
     <>
       <DienstenContext.Provider value={contextObject}>
         <Loader loading={loading} />
-        <MobileNav selected={'werk'} />
+        <MobileNav selected={'diensten'} />
         {!desktop ? <Hamburger /> : ""}
         <main onMouseMove={handleMouseMove} className='.main work-main' data-scroll-container ref={containerRef}>
           <Nav scrollObject={scrollObject} selected={"diensten"} />

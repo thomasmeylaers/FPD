@@ -31,7 +31,7 @@ export default function DienstenSphere({ mousePos, scrollRef, pepperRef, sphereC
   lightA.current.intensity = 0.8
 
   lightA.current.color = {}
-  lightA.current.color.value = '#54BAB9'
+  lightA.current.color.value = '#c90016'
   lightA.current.color.instance = new THREE.Color(lightA.current.color.value)
 
   lightA.current.spherical = new THREE.Spherical(1, 0.615, 2.049)
@@ -41,7 +41,7 @@ export default function DienstenSphere({ mousePos, scrollRef, pepperRef, sphereC
   lightB.current.intensity = 0.8
 
   lightB.current.color = {}
-  lightB.current.color.value = '#54BAB9'
+  lightB.current.color.value = '#c90016'
   lightB.current.color.instance = new THREE.Color(lightB.current.color.value)
 
   lightB.current.spherical = new THREE.Spherical(1, 2.561, - 1.844)

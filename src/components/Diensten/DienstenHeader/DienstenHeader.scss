@@ -5,7 +5,10 @@
     font-size: max(4.6666666667vw, 50px);
     font-weight: 500;
     .red {
-      color: $brightRed;
+      color: $darkRed;
+    }
+    .green {
+      color: #a9f03f;
     }
   }
   .sphere-container {

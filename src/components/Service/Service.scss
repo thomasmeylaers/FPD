@@ -99,4 +99,28 @@
       }
     }
   }
+  @include breakpoint-down(lg) {
+    .service-wrapper {
+      flex-direction: column;
+      .content-wrapper {
+        margin-left: 0;
+        .service-caption {
+          margin-top: 1rem;
+          font-size: 2rem;
+        }
+        .items {
+          flex-direction: column;
+          width: 100%;
+          .items-left,
+          .items-right {
+            width: 100%;
+          }
+          .items-item {
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+  }
 }
