@@ -18,4 +18,10 @@
     // background-color: red;
     right: 5vw;
   }
+  @include breakpoint-up(xl) {
+    .sphere-container {
+      top: 50vh;
+      right: 15vw;
+    }
+  }
 }

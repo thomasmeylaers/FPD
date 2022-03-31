@@ -23,6 +23,10 @@ export default function DienstenSphere({ mousePos, scrollRef, pepperRef, sphereC
   const lightA = useRef()
   const lightB = useRef()
   const sphereRect = useRef()
+  const width = useRef(window.innerWidth * 0.14)
+  if (window.innerWidth > 1800) {
+    width.current = window.innerWidth * 0.12
+  }
 
 
   // LIGHTS
@@ -115,7 +119,7 @@ export default function DienstenSphere({ mousePos, scrollRef, pepperRef, sphereC
 
   return (
     <mesh ref={sphereRef} position={[100, -60, -50]}>
-      <sphereGeometry ref={geometryRef} args={[window.innerWidth * 0.14, 64, 64]} />
+      <sphereGeometry ref={geometryRef} args={[width.current, 64, 64]} />
       <shaderMaterial
         ref={materialRef}
         uniforms={{
