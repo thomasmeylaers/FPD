@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react";
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet";
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -249,6 +248,10 @@ const IndexPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Fresh Pepper Design</title>
+
+      </Helmet>
       <WebGLContext.Provider value={contextObject}>
         <Loader loading={loading} />
         {!desktop ? <Hamburger /> : ""}

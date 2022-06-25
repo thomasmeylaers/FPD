@@ -11,6 +11,7 @@ export default function Proces() {
   const contextObject = useContext(WebGLContext)
   const [selected, setSelected] = useState("BRIEFING")
   const [lastSelected, setLastSelected] = useState("BRIEFING")
+  const [pulserClicked, setPulserClicked] = useState(false)
   const texten = useRef({
     "BRIEFING": "Bij de briefing fase bespreken we samen met u wat de noden zijn voor uw bedrijf en welke diensten er nodig zijn om tot uw doel te komen. Wij gaan ook een marktonderzoek doen om te kijken wat de concurrentie doet en hoe we zo goed mogelijk uw doelpubliek kunnen berijken.",
     "DESIGN": "Wij maken een design dat uw boodschap duidelijk en op een creatieve manier overbrengt naar de klant. Wij streven naar een design dat perfect overeenkomt met het brand van uw bedrijf en gebruiksvriendelijk is voor alle mogelijk toestellen. Er is steeds een wisselwerking met u waar we regelmatig een update geven waar we staan om een zo goed mogelijk product te leveren.",
@@ -51,6 +52,10 @@ export default function Proces() {
     setLastSelected(selected)
   }, [selected])
 
+  function handlePulser() {
+    alert("CUNT")
+  }
+
   return (
     <section className='proces' data-scroll-section>
 
@@ -79,8 +84,10 @@ export default function Proces() {
           </div>
 
           <div ref={contextObject.progressContainer} className="progress_container">
-            <Slider2 id="sliderVertical" state={[selected, setSelected]} />
-            <Slider2 id="sliderHorizontal" orientation={"horizontal"} state={[selected, setSelected]} />
+            <Slider2 id="sliderVertical" state={[selected, setSelected]} pulserState={[pulserClicked, setPulserClicked]} />
+            <Slider2 id="sliderHorizontal" orientation={"horizontal"} pulserState={[pulserClicked, setPulserClicked]} state={[selected, setSelected]} />
+            {!pulserClicked ? <div id="slide-notification"> SLIDE ME FOR MAGIC</div> : ''}
+
           </div>
         </div>
       </div>

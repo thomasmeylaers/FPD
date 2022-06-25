@@ -36,7 +36,7 @@ export default function Over() {
               </div>
               <div className="text scroll_reveal"><b>FUTURE-PROOF</b> <br /> <p>De digitale wereld staat niet stil, daarom leveren wij producten die ook morgen nog relevant zijn.</p>
               </div>
-              <div className="text scroll_reveal"><b>PURPOSE-DRIVEN</b> <br /> <p>Voor wij beginnen aan het design bedenken wij een strategie om uw specifieke doelen te bereiken.</p>
+              <div className="text scroll_reveal"><b>PURPOSE-DRIVEN</b> <br /> <p>Vóór wij beginnen aan het design bedenken wij een strategie om uw specifieke doelen te bereiken.</p>
               </div>
               <div className="text_mobile scroll_reveal"><b>CHANGE-MAKING</b> <br /> <p>Ons team bestaat uit mensen met diverse talenten gefocust op een creative ontwikkeling.</p><b>FUTURE-PROOF</b> <br /> <p>De digitale wereld staat niet stil, daarom leveren wij producten die ook morgen nog relevant zijn.</p><b>PURPOSE-DRIVEN</b> <br /> <p>Voor wij beginnen aan het design bedenken wij een strategie om uw specifieke doelen te bereiken.</p></div>
             </div>

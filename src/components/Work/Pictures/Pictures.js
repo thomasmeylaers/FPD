@@ -7,7 +7,7 @@ export default function Pictures({ materialsRef }) {
       <div className="container">
         <div className="content-wrapper">
           <ImageTile materialsRef={materialsRef} img={1} even={false} imgUrl={"winters"} title={"Winters"} id={"wintersImageTile"} text={"Web Design, UX/UI, Development, Fotografie"} />
-          <ImageTile materialsRef={materialsRef} img={2} even={true} imgUrl={"barbara"} title={"Bar Barbara"} id={"barBarbaraImageTile"} text={"Web Design, UX/UI, Development, Fotografie, Film"} />
+          <ImageTile materialsRef={materialsRef} img={2} even={true} imgUrl={"maison"} title={"Maison l'Aventure"} id={"barBarbaraImageTile"} text={"Web Design, UX/UI, Development, Fotografie, Film"} />
         </div>
       </div>
     </section>

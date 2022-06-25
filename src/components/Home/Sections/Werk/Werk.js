@@ -15,7 +15,7 @@ export default function Werk({ materialsRef }) {
         </SectionHeader2>
         <div className="content_wrapper">
           <ImageTile materialsRef={materialsRef} img={1} even={false} imgUrl={"winters"} title={"Winters"} id={"wintersImageTile"} text={"Web Design, UX/UI, Development, Fotografie"} />
-          <ImageTile materialsRef={materialsRef} img={2} even={true} imgUrl={"barbara"} title={"Maison l'Aventure"} id={"barBarbaraImageTile"} text={"Web Design, UX/UI, Development, Fotografie, Film"} />
+          <ImageTile materialsRef={materialsRef} img={2} even={true} imgUrl={"maison"} title={"Maison l'Aventure"} id={"barBarbaraImageTile"} text={"Web Design, UX/UI, Development, Fotografie, Film"} />
           <div id="bgChange"></div>
         </div>
       </div>

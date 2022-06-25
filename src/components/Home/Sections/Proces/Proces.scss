@@ -124,3 +124,19 @@
   top: 40%;
   transform: translateY(-50%);
 }
+
+#slide-notification {
+  position: absolute;
+  left: 40%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  font-size: 14px;
+  opacity: 0.8;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% {opacity: 0.3; }
+}

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useCallback } from 'react'
 import { gsap } from "gsap"
 import { WebGLContext } from '../../pages'
 
-export default function Slider2({ id, state, orientation }) {
+export default function Slider2({ id, state, orientation, pulserState }) {
   const partRef = useRef([])
   const heights = useRef([])
   const arrowRef = useRef()
@@ -13,6 +13,7 @@ export default function Slider2({ id, state, orientation }) {
 
   const selected = state[0]
   const setSelected = state[1]
+  const setPulserClicked = pulserState[1]
 
   useEffect(() => {
     // part0.current = part0.current.getBoundingClientRect().height
@@ -34,6 +35,7 @@ export default function Slider2({ id, state, orientation }) {
 
 
   const mouseDown = (e) => {
+    setPulserClicked(true)
     e.preventDefault()
     if (orientation == "horizontal") {
       contextObject.horizontalSliderRecording.current = true

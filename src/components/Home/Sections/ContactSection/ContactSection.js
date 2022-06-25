@@ -34,7 +34,7 @@ export default function ContactSection({ scrollObject, selected }) {
       <div className="container">
         <StaticImage placeholder="blurred" className="logo scroll_reveal" src="../../images/FPD_logo.png" alt="Fresh Pepper Design Logo" />
         <div className="title scroll_reveal">Laten we samen iets geweldig maken</div>
-        <div className="sub scroll_reveal">Stuur ons een mailtje als u een vraag heeft of samen wilt werken.</div>
+        {/* <div className="sub scroll_reveal">Stuur ons een mailtje als u een vraag heeft of samen wilt werken.</div> */}
         <a href='mailto:info@freshpepperdesign.com' className="cta scroll_reveal">info@freshpepperdesign.com <StaticImage alt="arrow" className='arrow' src="../../images/arrow.svg" placeholder="tracedSVG" /></a>
 
 

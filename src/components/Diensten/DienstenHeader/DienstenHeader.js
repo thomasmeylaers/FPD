@@ -9,7 +9,7 @@ export default function DienstenHeader() {
     <section data-scroll-section className="diensten-header">
       <div className="container">
         <div className="title skewed text-reveal">
-          <span className='red'>Experienced companies</span>, new players <br /> or ferocious startups
+          We'll <span className='red'>solve any problem</span>  <br /> you throw at us
         </div>
       </div>
       <div ref={contextObject.sphereContainer} className="sphere-container"></div>

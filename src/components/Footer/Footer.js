@@ -19,11 +19,11 @@ export default function Footer({ scrollObject, selected }) {
       <div className="hr"></div>
       <div className="content_wrapper scroll_reveal">
         <div className="link_wrapper">
-          <div className="socials">
+          {/* <div className="socials">
             <Link to="/" className="link socials_link">Fb</Link>
             <Link to="/" className="link socials_link">Ig</Link>
-          </div>
-          <a className='link' href="tel:+32497689056">+32 497 68 90 56</a>
+          </div> */}
+          <a className='link' href="tel:+32497689056">+32 470 27 16 77</a>
         </div>
         <div className="nav_wrapper">
           {navArray.map((element, index) => {

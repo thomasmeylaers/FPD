@@ -79,6 +79,7 @@ export default function Slider({ id, state, orientation }) {
           <div className="big"></div>
         </div>
       </div>
+
     </div>
   )
 }
