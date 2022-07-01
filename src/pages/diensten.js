@@ -7,11 +7,12 @@ import Nav from '../components/Nav/Nav';
 import MobileNav from '../components/MobileNav/MobileNav';
 import Hamburger from '../components/Hamburger/Hamburger';
 import Header from '../components/Work/Header/Header';
-import DienstenSection from '../components/Diensten/DienstenSection/DienstenSection';
+// import DienstenSection from '../components/Diensten/DienstenSection/DienstenSection';
 import ContactSection from '../components/Home/Sections/ContactSection/ContactSection';
 import WaaromOns from '../components/Diensten/WaaromOns/WaaromOns';
 import DienstenHeader from '../components/Diensten/DienstenHeader/DienstenHeader';
 import DienstenCanvas from '../webgl/DienstenCanvas';
+import DienstenSection2 from '../components/Diensten/DienstenSection2/DienstenSection2';
 
 export const DienstenContext = React.createContext()
 
@@ -140,8 +141,9 @@ export default function Diensten() {
         <main onMouseMove={handleMouseMove} className='.main work-main' data-scroll-container ref={containerRef}>
           <Nav scrollObject={scrollObject} selected={"diensten"} />
           <DienstenHeader />
-          <DienstenSection scrollObject={scrollObject} />
-          <WaaromOns />
+          {/* <DienstenSection scrollObject={scrollObject} /> */}
+          <DienstenSection2 scrollObject={scrollObject} />
+          {/* <WaaromOns /> */}
           <ContactSection scrollObject={scrollObject} selected={'diensten'} />
         </main>
         <div className="werk-bg"></div>
