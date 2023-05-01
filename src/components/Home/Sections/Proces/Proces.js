@@ -13,8 +13,8 @@ export default function Proces() {
   const [lastSelected, setLastSelected] = useState("BRIEFING")
   const [pulserClicked, setPulserClicked] = useState(false)
   const texten = useRef({
-    "BRIEFING": "Bij de briefing fase bespreken we samen met u wat de noden zijn voor uw bedrijf en welke diensten er nodig zijn om tot uw doel te komen. Wij gaan ook een marktonderzoek doen om te kijken wat de concurrentie doet en hoe we zo goed mogelijk uw doelpubliek kunnen berijken.",
-    "DESIGN": "Wij maken een design dat uw boodschap duidelijk en op een creatieve manier overbrengt naar de klant. Wij streven naar een design dat perfect overeenkomt met het brand van uw bedrijf en gebruiksvriendelijk is voor alle mogelijk toestellen. Er is steeds een wisselwerking met u waar we regelmatig een update geven waar we staan om een zo goed mogelijk product te leveren.",
+    "BRIEFING": "Bij de briefing fase bespreken we samen met u wat de noden zijn voor uw bedrijf en welke diensten er nodig zijn om tot uw doel te komen. We bespreken wat uw voorkeuren en ideeën zijn en hoe we dat kunnen integreren in het eindproduct.",
+    "DESIGN": "Wij maken een design dat uw boodschap duidelijk en op een creatieve manier overbrengt naar de klant. Wij streven naar een design dat perfect overeenkomt met het brand van uw bedrijf en gebruiksvriendelijk is voor alle mogelijk toestellen. Er is steeds een wisselwerking met u waardoor continue feedback mogelijk is.",
     "DEVELOPMENT": "Als het design gefinaliseerd is gaan we over tot de ontwikkeling. Uw product wordt voor het correcte platform ontwikkeld om zo uw klanten het best te kunnen bereiken. Met onze expertise en moderne technologie zorgen we voor een creatieve, maar functionele digitale ervaring.",
     "FEEDBACK": "Na de finalisatie en de uitrolling van het product blijft er een continue wisselwerking met u. Wij geven u data over hoe het product presteert. Samen met u proberen we zo het product te verbeteren zodat uw boodschap door zoveel mogelijk mensen gezien kan worden."
   })

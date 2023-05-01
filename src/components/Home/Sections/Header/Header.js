@@ -21,16 +21,17 @@ export default function Header() {
         </div>
         <div className="subtitle">
           <div className="line skewed text-reveal">
-            We create digital solutions
+            Digital solutions
           </div>
           <div className='line skewed text-reveal'>
             with <span id='passion' className="red">passion</span>
           </div>
         </div>
         {/* <div id='headerAnimationTrigger' className="text skewed text-reveal" >With many years of experience in digital product development, we understand how to create user-friendly and memorable interfaces for the leading world companies. Properly and harmoniously, we integrate modern technologies into the classical graphic design aesthetics.</div> */}
-        <div id='headerAnimationTrigger' className="text skewed text-reveal" >Wij creëren unieke digitale ervaringen voor uw bedrijf om uw doelen te bereiken. Wij integreren moderne technologie met een creatief design om een gebruiksvriendlijke interface te maken voor uw klanten en zo uw boodschap de wereld in te sturen. </div>
+        {/* <div id='headerAnimationTrigger' className="text skewed text-reveal" >Wij creëren unieke digitale ervaringen voor uw bedrijf om uw doelen te bereiken. Dit doen we door moderne technologie te integreren met een creatief design om zo een gebruiksvriendelijke interface te creëren voor uw klanten en zo uw boodschap de wereld in te sturen.</div> */}
+        <div id='headerAnimationTrigger' className="text skewed text-reveal" >Ons team ontwikkelt digitale oplossingen met een focus op design. Wij bouwen websites, webapplicaties, e-commerce & meer.</div>
       </div>
-      <Scroll />
+      {/* <Scroll /> */}
     </section>
   )
 }

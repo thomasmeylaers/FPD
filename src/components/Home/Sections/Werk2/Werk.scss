@@ -1,0 +1,77 @@
+// Breakpoint is for width of 1550 second breakpoint at 650
+
+.c-image-tile-container {
+  cursor: pointer;
+  width: 600px;
+  overflow: hidden;
+  @media only screen and (min-width: 1550px){
+    &:not(:first-child) {
+      margin-top: -280px;
+    }
+  }
+
+  @media only screen and (max-width: 1550px){
+    margin:auto;
+    margin-bottom: 4rem;
+  }
+
+
+
+  .c-image {
+    height: 600px;
+    img {
+      height: 100%;
+    }
+    .c-image-StaticImage{
+      height: 100%;
+
+    }
+    .c-image-inner-image {
+      transition: transform .4s $ease-out-soft;
+      will-change: transform;
+      scale: 1.2;
+    }
+    .c-image-hover {
+      transform: scale(0.92);
+    }
+  }
+  .c-title {
+    margin-top: 1.5rem;
+    font-size: 32px;
+    .arrow {
+      padding-top: 2px;
+    }
+  }
+  .c-description {
+    opacity: 0.5;
+  }
+
+  @media only screen and (max-width: 650px){
+    width: 100%;
+    .c-title {
+      font-size: 24px;
+      margin-top: 1rem;
+      .arrow {
+        padding-top: 5px;
+      }
+    }
+    
+  }
+}
+.c-image-tile-odd {
+  margin-left: auto;
+  // @media only screen and (max-width: 1550px){
+  //   margin-left: 0;
+  // }
+}
+
+.werk {
+  .c-tiles-container {
+    margin: 6rem;
+    @media only screen and (max-width: 1550px){
+      margin: 0 auto;
+
+    }
+  }
+}
+

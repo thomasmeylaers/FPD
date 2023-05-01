@@ -16,8 +16,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
   const startProgress = useRef()
   const animationProgress = useRef()
   animationProgress.current = { t: 0 }
-  const pepperRotation = useRef()
-  pepperRotation.current = { rotX: 0, rotZ: 0 }
+
   const spherePosition = useRef()
   spherePosition.current = { x: 250, y: -50 }
   const offsetRef = useRef()
@@ -133,6 +132,7 @@ export default function Points({ mousePos, scrollRef, pepperRef, sphereContainer
 
     sphereRef.current.position.y = scrollRef.current * (desktop ? 1 : 0.05) + offsetRef.current.y
     sphereRef.current.position.x = offsetRef.current.x
+
     materialRef.current.uniforms.uLightBColor.value = new THREE.Color(lightB.current.color.value)
     materialRef.current.uniforms.uLightAColor.value = new THREE.Color(lightA.current.color.value)
     if (scrollRef.current > animationTrigger.current && desktop) {

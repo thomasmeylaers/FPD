@@ -80,7 +80,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 .skewed {
-  transform: skewY(5deg);
+  transform: skewY(1deg);
 }
 .nav_reveal {
   transform-origin: center left;
@@ -159,3 +159,4 @@ body {
   position: fixed;
   top: 50px;
 }
+

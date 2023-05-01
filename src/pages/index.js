@@ -10,7 +10,7 @@ import Nav from "../components/Nav/Nav"
 import Header from "../components/Home/Sections/Header/Header"
 import AnimationCanvas from "../webgl/AnimationCanvas";
 import Over from "../components/Home/Sections/Over/Over";
-import Werk from "../components/Home/Sections/Werk/Werk";
+import Werk from "../components/Home/Sections/Werk2/WerkSection";
 import Proces from "../components/Home/Sections/Proces/Proces";
 import Diensten from "../components/Home/Sections/Diensten/Diensten";
 import Contact from "../components/Home/Sections/ContactSection/ContactSection";
@@ -18,6 +18,8 @@ import Loader from "../components/Loader/Loader";
 import Hamburger from "../components/Hamburger/Hamburger";
 import MobileNav from "../components/MobileNav/MobileNav";
 import ContactSection from "../components/Home/Sections/ContactSection/ContactSection";
+import WerkSection from "../components/Home/Sections/Werk2/WerkSection";
+import SectionHeader2 from "../components/SectionHeader2/SectionHeader2";
 
 export const WebGLContext = React.createContext()
 
@@ -170,12 +172,12 @@ const IndexPage = () => {
 
   useEffect(() => {
     if (!loading) {
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
+      const tl = gsap.timeline({ defaults: { ease: 'power1.out' } })
       tl.to('.text-reveal', {
         clipPath: 'polygon(0 0,100% 0, 100% 100%, 0 100%)',
         transform: "skewY(0deg)",
         stagger: .3,
-        duration: 1.5,
+        duration: 1,
         delay: 0.5
       }).to('.reveal', {
         opacity: 1,
@@ -256,11 +258,16 @@ const IndexPage = () => {
         <Loader loading={loading} />
         {!desktop ? <Hamburger /> : ""}
         <MobileNav selected={'over ons'} />
-        <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container ref={containerRef}>
+        <main className=".main" onMouseUp={mouseUp} onMouseMove={handleMouseMove} data-scroll-container id="scroll-container" ref={containerRef}>
           <Nav scrollObject={scrollObject} selected="over ons" />
           <Header />
           <Over />
-          <Werk materialsRef={materialsRef} />
+          <div className="container" data-scroll-section>
+            <SectionHeader2>
+              ONS WERK
+            </SectionHeader2>
+          </div>
+          <WerkSection />
           <Proces />
           <Diensten />
           <ContactSection scrollObject={scrollObject} selected={'over ons'} />
@@ -273,6 +280,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-
-

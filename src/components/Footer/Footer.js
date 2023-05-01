@@ -23,7 +23,7 @@ export default function Footer({ scrollObject, selected }) {
             <Link to="/" className="link socials_link">Fb</Link>
             <Link to="/" className="link socials_link">Ig</Link>
           </div> */}
-          <a className='link' href="tel:+32497689056">+32 470 27 16 77</a>
+          <a className='link' href="tel:+32497689056">+32 497 68 90 56</a>
         </div>
         <div className="nav_wrapper">
           {navArray.map((element, index) => {

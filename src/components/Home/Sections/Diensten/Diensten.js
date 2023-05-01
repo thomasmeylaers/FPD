@@ -21,7 +21,7 @@ export default function Diensten() {
           <Card2 title={"BRANDING"} items={["Logodesign", "Font & Color palette", "Fotografie", "Drukwerk"]} />
 
           <Card2 title={"DIGITAL"} items={["Webdesign", "E-Commerce", "SEO", "Email template & handtekening"]} />
-          <Card2 title={"DEVELOPMENT"} items={["Front-end Development", "Back-end Development", "Responsive"]} />
+          <Card2 title={"DEVELOPMENT"} items={["Front-end ", "Back-end ", "Responsive", "Web Applicaties"]} />
         </div>
       </div>
       {/* <div id='bgChange2'></div> */}

@@ -31,16 +31,16 @@ export default function ContactSection({ scrollObject, selected }) {
 
   return (
     <section className='contact' data-scroll-section>
-      <div className="container">
+      <div data-scroll className="container">
         <StaticImage placeholder="blurred" className="logo scroll_reveal" src="../../images/FPD_logo.png" alt="Fresh Pepper Design Logo" />
-        <div className="title scroll_reveal">Laten we samen iets geweldig maken</div>
+        <div className="title scroll_reveal">Geef jouw business een boost.</div>
         {/* <div className="sub scroll_reveal">Stuur ons een mailtje als u een vraag heeft of samen wilt werken.</div> */}
         <a href='mailto:info@freshpepperdesign.com' className="cta scroll_reveal">info@freshpepperdesign.com <StaticImage alt="arrow" className='arrow' src="../../images/arrow.svg" placeholder="tracedSVG" /></a>
 
 
         <Footer scrollObject={scrollObject} selected={selected} />
       </div>
-      <div className="top" onClick={topClick}>
+      <div data-scroll className="top" onClick={topClick}>
         <div id='bgChange2' className="arrow_wrapper">
           <StaticImage innerRef={arrowRef} className={`reveal arrow topArrow`} alt="arrow" src="../../images/right.svg" placeholder="tracedSVG" />
           <span onMouseEnter={arrowEnter} onMouseLeave={arrowLeave} className='reveal' >TOP</span>

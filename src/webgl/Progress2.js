@@ -9,7 +9,7 @@ import { GUI } from 'dat.gui'
 import fragmentShader from './shaders/progress/fragmentShader2.glsl'
 import vertexShader from './shaders/progress/vertexShader2.glsl'
 
-export default function Progress2({ mousePos, progressContainer, scrollRef, state, sliderProgress }) {
+export default function Progress2({ loading, mousePos, progressContainer, scrollRef, state, sliderProgress }) {
   // Refs
   const materialRef = useRef()
   const sphereRef = useRef()
@@ -176,11 +176,13 @@ export default function Progress2({ mousePos, progressContainer, scrollRef, stat
     materialRef.current.uniforms.uLightBColor.value = new THREE.Color(lightB.current.color.value)
     materialRef.current.uniforms.uLightAColor.value = new THREE.Color(lightA.current.color.value)
 
-    gsap.to(sphereRef.current.position, {
-      y: scrollRef.current - progressContainerRect.current.top + window.innerHeight / 2 - progressContainerRect.current.height / 2.5,
-      x: progressContainerRect.current.left - window.innerWidth / 2 + progressContainerRect.current.width / 2.5,
-      duration: 0
-    })
+    if (!loading) {
+      gsap.to(sphereRef.current.position, {
+        y: scrollRef.current - progressContainerRect.current.top + window.innerHeight / 2 - progressContainerRect.current.height / 2.5,
+        x: progressContainerRect.current.left - window.innerWidth / 2 + progressContainerRect.current.width / 2.5,
+        duration: 0,
+      })
+    }
 
 
     // DIFFERENT STATES

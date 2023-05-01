@@ -2,7 +2,7 @@ import * as React from "react"
 
 
 const NotFoundPage = () => (
-  <div className=""></div>
+  <div className="">404 :(</div>
 )
 
 export default NotFoundPage

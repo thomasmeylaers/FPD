@@ -43,17 +43,19 @@ export default function AnimationCanvas() {
           fragmentShader={fragment}
         />
       </mesh> */}
+      {contextObject.desktop ? <Progress2 loading={contextObject.loading} sliderProgress={contextObject.sliderProgress.current} state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> : ""}
+
       <Sphere loading={contextObject.loading} setLoading={contextObject.setLoading} scrollRef={scrollRef} sphereContainer={contextObject.sphereContainer} pepperRef={contextObject.pepperRef} mousePos={mousePosRef.current} timeRef={contextObject.timeRef} desktop={contextObject.desktop} />
 
       {contextObject.desktop ? <Pictures materialsRef={contextObject.materialsRef} scrollRef={scrollRef} /> : ""}
 
       {/* <Progress state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> */}
 
-      {contextObject.desktop ? <Progress2 sliderProgress={contextObject.sliderProgress.current} state={contextObject.progressState} mousePos={mousePosRef.current} progressContainer={contextObject.progressContainer} scrollRef={scrollRef} /> : ""}
+
 
       {/* {loading ? "" : <Sphere scrollRef={scrollRef} sphereContainer={contextObject.sphereContainer} pepperRef={contextObject.pepperRef} mousePos={mousePosRef.current} />} */}
 
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </Canvas>
 
   )

@@ -12,6 +12,7 @@ import WorkCanvas from "../webgl/WorkCanvas"
 import Pictures from "../components/Work/Pictures/Pictures";
 import Loader from "../components/Loader/Loader";
 import ContactSection from "../components/Home/Sections/ContactSection/ContactSection";
+import WerkSection from "../components/Home/Sections/Werk2/WerkSection";
 
 export const WorkContext = React.createContext()
 
@@ -139,7 +140,10 @@ export default function Werk() {
         <main onMouseMove={handleMouseMove} className=".main work-main" data-scroll-container ref={containerRef}>
           <Nav scrollObject={scrollObject} selected="werk" />
           <Header />
-          <Pictures materialsRef={materialsRef} />
+          <div className="werk-werksection-container">
+            <WerkSection />
+          </div>
+          {/* <Pictures materialsRef={materialsRef} /> */}
           <ContactSection scrollObject={scrollObject} selected={'werk'} />
         </main>
         <div className="werk-bg"></div>
